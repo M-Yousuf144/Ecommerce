@@ -554,8 +554,7 @@ export const removecartitem = (data) =>(dispatch) =>{
 
 export const sendSubscriberEmail= (data) =>(dispatch) =>{
     shop.sendSubscriberEmail(data,e=>{
-        if(e.status === 200){
-            toast.success(e.message, {
+            toast.success(e.Message, {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -566,9 +565,7 @@ export const sendSubscriberEmail= (data) =>(dispatch) =>{
             bodyClassName: 'toastStyle',
         });
              
-        }else{
-            toast.error(e.message);
-        }
+        
      });
 }
 

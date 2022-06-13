@@ -313,7 +313,6 @@ import { toast } from 'react-toastify';
   },
 
   sendSubscriberEmail:(payload,cb,timeout) =>{
-    console.log(payload)
     postData(url.temp_url+url.SubcriberEmail,payload).then( async d =>{
       cb(d.data);
     });

@@ -22,7 +22,7 @@ class Coolncool extends Component {
         this.counter = React.createRef(0);
         this.state = {
            loadingCategory:true,
-           subscribeModal:false,
+           subscribeModal:true,
            checkstatus:Cookies.get('SubscribeModal'),
            subscriberEmail:''
            };
@@ -164,7 +164,7 @@ this.state.loadingCategory ?
                     </div>
                 </section>
                 
-            {(this.state.subscribeModal ==  true && this.state.checkstatus !== 'true')?
+            {(this.state.subscribeModal ==  true && this.state.checkstatus == 'true')?
             <div id="popup2">
                 <div id="popup">
     <div id="close">

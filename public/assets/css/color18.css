@@ -74,7 +74,7 @@
 height: 100%;
   background-color: #ffffff96;
   font-family: arial;
-  display: none;
+  display: block;
 }
 #popup{
 
@@ -89,7 +89,7 @@ height: 100%;
   z-index: 111111;
   background-color: white;
   font-family: arial;
-  display: none;
+  display: block;
 }
 #close{
   cursor: pointer;
