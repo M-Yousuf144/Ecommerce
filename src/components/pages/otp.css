@@ -1,0 +1,9 @@
+.otpinp{
+    border:1px solid rgb(204, 204, 204);
+    border-radius: 5;
+    /* border: none; */
+}
+.ResendOTP onResendClick
+{
+    background-color:aqua ;
+}

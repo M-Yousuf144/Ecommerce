@@ -1,0 +1,25 @@
+[{
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "buttontext":"Text 01",
+    "heading": "Heading 01",
+    "url":"https://www.coolandcool.pk/wp-content/uploads/2018/12/baby-banner.jpg"
+},
+{
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "buttontext":"Text 02",
+    "heading": "Heading 02",
+    "url":"http://portal.coolandcool.pk//images/banners/home/Kubra.jpg"
+},
+{
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "buttontext":"Text 03",
+    "heading": "Heading 03",
+    "url":"http://portal.coolandcool.pk/images/banners/home/Afridi.jpg"
+},
+
+{
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "buttontext":"Text 04",
+    "heading": "Heading 04",
+    "url":"https://mk0blogpublicgorygjw.kinstacdn.com/wp-content/uploads/2020/01/PublicGoods_ContentImagery_202001_LotionVCream_Featured_3200x1600.jpg"
+}]
