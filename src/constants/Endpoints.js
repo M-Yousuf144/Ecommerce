@@ -2,8 +2,8 @@
 //base URL
 export const base_url = 'https://portal.coolandcool.pk/'
 // export const temp_url = "http://ecommerce.alisonstech.com/public/"
-// export const temp_url = "http://shop.irishandbags.com/public/"
-export const temp_url = "http://127.0.0.1:8000/"
+export const temp_url = "https://shop.makkiherbals.com/public/"
+
 export const encrypt_code = 'alisonstech'
 const check_login = localStorage.getItem("customerData");
 //  'http://ecommerce.alisonstech.com/public/'

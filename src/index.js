@@ -110,7 +110,7 @@ import CustomizedTooltips from './components/pages/cart';
 import CartSidebars from './components/pages/Sidebarcart';
 import HorizontalNonLinearStepper from './components/pages/bredcram';
 import Guest_Address from './components/pages/guest-address';
-
+import Notification from '../src/Notification'
 
 // import CheckoutNew from './components/pages/checkoutNew';
 
@@ -184,6 +184,7 @@ class Root extends React.Component {
 								{/*Routes For Single Product*/}
 								<Route path={`${process.env.PUBLIC_URL}/product/product/:id`} component={LeftSideBar}/>
                                 <Route path={`${process.env.PUBLIC_URL}/deals/product/:id`} component={DealsBar}/>
+                                <Route path={`${process.env.PUBLIC_URL}/testnoti`} component={Notification} />
 								
 								<Route path={`${process.env.PUBLIC_URL}/test`} component={HorizontalNonLinearStepper}/>
 

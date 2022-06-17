@@ -164,7 +164,7 @@ this.state.loadingCategory ?
                     </div>
                 </section>
                 
-            {(this.state.subscribeModal ==  true && this.state.checkstatus == 'true')?
+            {(this.state.subscribeModal ==  true && this.state.checkstatus != 'true')?
             <div id="popup2">
                 <div id="popup">
     <div id="close">
