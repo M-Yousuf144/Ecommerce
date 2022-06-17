@@ -1,0 +1,25 @@
+.bg{
+    width: 100%;
+       height:auto;
+     
+   background-color: #ffffff;
+       background-size: 100% 100%;
+       background-position: top center;
+       margin:auto;
+   }
+   hr:not([size]) {
+    height: 0px;
+}
+   .mainRow{
+/*    
+     margin-left: 10%;
+     margin-right: 10%; */
+   }
+
+
+   
+
+   
+   
+
+   

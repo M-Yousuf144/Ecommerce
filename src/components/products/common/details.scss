@@ -1,0 +1,314 @@
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 547px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    // padding: 25px 0 69px 0;
+    margin: 0 auto;
+  }
+  
+  .reviews__heading {
+    font-size: 32px;
+    color: #323357;
+    font-family: "Poppins";
+    font-weight: 700;
+    text-align: center;
+    margin: 28px 0;
+    
+  }
+  
+  .reviews__average-ratings {
+    margin-bottom: 63px;
+  }
+  
+  .average-ratings__stars {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 25px;
+    width: 100%;
+    height: 63px;
+    border-radius: 32px;
+    background-color: #f5f8ff;
+    margin-bottom: 8px;
+  }
+  .product_average-ratings__score {
+    display: flex;
+    align-items: center;
+
+    width: 347px;
+
+
+   
+    margin-bottom: 8px;
+  }
+  .product_average-ratings__stars {
+    display: flex;
+    align-items: center;
+    width: 160px;
+
+  }
+  .stars__average-rating-score {
+    font-size: 16px;
+    color: #323357;
+    font-family: "Muli";
+    font-weight: 400;
+    margin-left: auto;
+  }
+  
+  .average-ratings__total-customers {
+    font-size: 16px;
+    color: #595b71;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .reviews__breakdown {
+    display: flex;
+    margin-bottom: 44px;
+  }
+  
+  .reviews-breakdown__wrapper {
+    margin: 0 auto;
+  }
+  
+  .reviews__single-star-average {
+    display: flex;
+    margin: 22px 0;
+  }
+  
+  .reviews__single-star-average:first-child {
+    margin-top: 0;
+  }
+  
+  .single-star-average__amount {
+    font-size: 13px;
+    color: #2a5bda;
+    font-weight: 400;
+  }
+  
+  .single-star-average__progress-bar {
+    max-width: 160px;
+    width: 160px;
+    border-radius: 10px;
+    background-color: #f5f8ff;
+    padding: 1px;
+    margin: 0 10px;
+  }
+  
+  .progress-bar__data {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    appearance: none;
+    border: none;
+  }
+  
+  .progress-bar__data[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 10px;
+  }
+  
+  .progress-bar__data[value]::-webkit-progress-value {
+    border-radius: 8px;
+    filter: drop-shadow(0px 4px 5px rgba(255, 204, 72, 0.53));
+    background: #ffcc48;
+  }
+  
+  .single-star-average__percentage {
+    font-size: 13px;
+    color: #323357;
+    font-family: "Muli";
+    font-weight: 400;
+  }
+  
+  .calculation-info__desc {
+    font-size: 16px;
+    color: #2a5bda;
+    font-family: "Muli";
+    font-weight: 400;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  :root {
+    --moderate-violet: 263, 55%, 52%;
+    --moderate-violet-light: 263, 55%, 75%;
+    --very-dark-grayish-blue: 217, 19%, 35%;
+    --very-dark-blackish-blue: 219, 29%, 14%;
+    --white: 0, 0%, 100%;
+    --light-gray: 0, 0%, 81%;
+    --light-grayish-blue: 210, 46%, 95%;
+    
+    --ff-barlow: 'Poppins', sans-serif;
+    --fw-600: 600;
+    
+    --n0columns: 4;
+    --track-size: 1fr;
+    
+    --profile-pic-width: 2.5rem;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    .patrick--blackblue {
+        background: #fae1dd;
+    }
+    
+    .name, .review {
+        font-weight: var(--fw-600);
+        color: rgba(0,0,0,0.7);
+    }
+    
+    // .verified, .details {
+    //     font-size: 0.8125rem;
+    // }
+    
+    // .main {
+    //     // display: grid;
+    //     // grid-template-columns: repeat(var(--n0columns), var(--track-size));
+    //     // grid-template-areas:
+    //     // "daniel daniel jonathan kira"
+    //     // "jeanette patrick patrick kira";
+    //     gap: 2em;
+    //     width: 80%;
+    //     margin: 5em auto;
+    //     padding: 50px;
+    // }
+    
+    .article {
+        // display: grid;
+        margin: 7px;
+
+        // grid-template-columns: 3.4375rem 1fr;
+        // grid-auto-rows: 20px min-content;
+        // grid-template-areas:
+        // "image name"
+        // "image verified"
+        // "review review"
+        // "details details";
+        border-radius: 0.625rem;
+        padding: 2em;
+    }
+    
+
+
+    
+    .profile {
+        border-radius: 50%;
+        width: var(--profile-pic-width);
+        border: 2px solid var(--border-color, rgba(0,0,0,0.7));
+    }
+    
+    .profile--light-violet {
+        --border-color: hsl(var(--moderate-violet-light));
+    }
+    
+    .profile--violet {
+        --border-color: hsl(var(--moderate-violet));
+    }
+    
+    // .patrick {
+    //     grid-area: patrick;
+    // }
+  
+    
+    .jeanette .name, .kira .name,
+    .jeanette .review, .kira .review {
+        color: hsl(var(--very-dark-blackish-blue));
+    }
+    
+    .jeanette .verified, .kira .verified,
+    .jeanette .details, .kira .details {
+        color: hsl(var(--very-dark-grayish-blue));
+    }
+
+    .verified {
+        // grid-area: verified;
+        color: rgba(0,0,0,0.4);
+    }
+    
+    .review {
+        // grid-area: review;
+        margin-top: 1rem;
+    }
+    
+    .details {
+        // grid-area: details;
+        line-height: 1.5em;
+        margin-top: 1rem;
+        color: rgba(0,0,0,0.7);
+    }
+    
+    .namei, .verified {
+        white-space: nowrap;
+    }
+    
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+    }
+    
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
+    }
+    
+    .attribution a:hover,
+    .attribution a:focus { 
+        color: hsl(228, 45%, 60%);
+        outline: none; 
+    }
+    
+    /* Media Queries */
+    
+    @media (max-width: 1260px) { /* Laptops & Smaller Desktops */
+        main {
+            width: 100%;
+        }
+    
+        article {
+            padding: 1.5em;
+        }
+    }
+    
+    @media (max-width: 950px) { /* Phones and Larger Tablets */
+        :root {
+            --n0columns: 2;
+        }
+    
+        
+          .main {
+            // display: grid;
+          
+            gap: 0em;
+            width: 100%;
+            margin: 0em ;
+            padding: 0px;
+        
+            
+        }
+        .article{
+          padding: 0px;
+        }
+    }
+    
