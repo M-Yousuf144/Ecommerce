@@ -2,8 +2,8 @@
 //base URL
 export const base_url = 'https://portal.coolandcool.pk/'
 // export const temp_url = "http://ecommerce.alisonstech.com/public/"
-// export const temp_url = "http://shop.irishandbags.com/public/"
-export const temp_url = "http://127.0.0.1:8000/"
+export const temp_url = "https://shop.makkiherbals.com/Admin/public/"
+
 export const encrypt_code = 'alisonstech'
 const check_login = localStorage.getItem("customerData");
 //  'http://ecommerce.alisonstech.com/public/'
@@ -25,7 +25,7 @@ export const getsocialicons = '/api/social-icons';
 export const getcustomer = 'api/customer/get?token=true';
 export const getAddress = 'api/addresses?token=true';
 export const getReviews = 'api/reviews?token=true';
-export const getWishlist = 'api/wishlist?token=true';
+export const getWishlist = `api/wishlist${(check_login !== null)?'?token=true':''}`;
 export const removeWishlist = 'api/wishlist/add/';
 export const movetocart = 'api/move-to-cart/';
 export const MyOrders = 'api/orders?token=true';

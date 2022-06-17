@@ -51,7 +51,7 @@ returnsubmit = (e) =>{
     
     render (){
         const {getorders} = this.props;
-        console.log(getorders)
+
         if(this.state.current == 'detail' && this.state.active == true){
             document.querySelector(".loader-wrapper").style = "display: block";
         }
@@ -60,9 +60,10 @@ returnsubmit = (e) =>{
 
 
   return (
+    
 <>
-
-<div class="container-fluid  mb-12" >
+{(getorders)?
+    <div class="container-fluid  mb-12" >
     <div class="row  cart align-items-center justify-content-center" >
     <div className='' />
          <Heading name="Order Details" />
@@ -270,6 +271,9 @@ returnsubmit = (e) =>{
         </div>
     </div>
 </div>
+    
+:''}
+
 
 
 
