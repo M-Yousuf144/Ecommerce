@@ -246,66 +246,69 @@ null
                                                      <p>The following addresses will be used on the checkout page by default.</p>
                                                     </div>
                                                     <div class="row"  >
-                                                     <Slider {...settings} class="slide-1 offer-slider">
-                                                            {(Address.length !== 0)?
-                                                            Address.map((e,i)=>{
+                                                        {(Address)?
+                                                        <Slider {...settings} class="slide-1 offer-slider">
+                                                        {(Address.length !== 0)?
+                                                        Address.map((e,i)=>{
 return(
-                                                        <div key={i} class="col-md-4" style={{padding:10}}>
-                                                         <div className='row' style={{padding:20,boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d",height:"400px"}}>
-                                                            <div className='col-md-8 text-center'>
-                                                            <h3 style={{paddingTop:0, fontWeight:"bold",   paddingBottom:10}}>Address {i + 1}</h3>
-                                                           </div>
-                                                            <div className='col-md-4 text-center'>
-                                                            <Link  to={`${process.env.PUBLIC_URL}/address`} ><FiEdit color='#13743F' className='mx-2'  onClick={()=>sendid(e.id)} size={20} /></Link>
-                                                            <FiTrash2 className='mx-2' color='grey' onClick={()=>getaddressid(e.id)} size={20} />
-                                                            </div>
-                                                            <div className="row" >
-                                                            <div>
-                                                                <div style={{display:"flex"}}>
-                                                            <h6 style={{fontWeight:"bold"}}>Country:</h6>
-                                                            <p style={{marginLeft:10, paddingTop:3}}>{e.country}</p>
-                                                                </div>
-                                                                <div style={{display:"flex"}}>
-                                                            <h6 style={{fontWeight:"bold"}}>City:</h6>
-                                                            <p style={{marginLeft:10, paddingTop:3}}>{e.city}</p>
-                                                                </div>
-                                                                <div style={{display:"flex"}}>
-                                                            <h6 style={{fontWeight:"bold"}}>State:</h6>
-                                                            <p style={{marginLeft:10, paddingTop:3}}>{e.state}</p>
-                                                                </div>
-                                                                <div style={{display:"flex"}}>
-                                                            <h6 style={{fontWeight:"bold"}}>Post Code:</h6>
-                                                            <p style={{marginLeft:10, paddingTop:3}}>{e.postcode}</p>
-                                                                </div>
+                                                    <div key={i} class="col-md-4" style={{padding:10}}>
+                                                     <div className='row' style={{padding:20,boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d",height:"400px"}}>
+                                                        <div className='col-md-8 text-center'>
+                                                        <h3 style={{paddingTop:0, fontWeight:"bold",   paddingBottom:10}}>Address {i + 1}</h3>
+                                                       </div>
+                                                        <div className='col-md-4 text-center'>
+                                                        <Link  to={`${process.env.PUBLIC_URL}/address`} ><FiEdit color='#13743F' className='mx-2'  onClick={()=>sendid(e.id)} size={20} /></Link>
+                                                        <FiTrash2 className='mx-2' color='grey' onClick={()=>getaddressid(e.id)} size={20} />
+                                                        </div>
+                                                        <div className="row" >
+                                                        <div>
                                                             <div style={{display:"flex"}}>
-                                                            <h6 style={{width:150, fontWeight:"bold"}}>Phone Number:</h6>
-                                                            <p style={{marginLeft:-2, paddingTop:3}}>{e.phone}</p>
-                                                                </div>
+                                                        <h6 style={{fontWeight:"bold"}}>Country:</h6>
+                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.country}</p>
+                                                            </div>
                                                             <div style={{display:"flex"}}>
-                                                            <h6 style={{fontWeight:"bold"}}>Address:</h6>
-                                                            <p style={{marginLeft:10, paddingTop:3}}>
-                                                            {e.address1}<br />
-                                                            </p>
-                                                                </div>
-                                                            <br />
+                                                        <h6 style={{fontWeight:"bold"}}>City:</h6>
+                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.city}</p>
                                                             </div>
+                                                            <div style={{display:"flex"}}>
+                                                        <h6 style={{fontWeight:"bold"}}>State:</h6>
+                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.state}</p>
                                                             </div>
+                                                            <div style={{display:"flex"}}>
+                                                        <h6 style={{fontWeight:"bold"}}>Post Code:</h6>
+                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.postcode}</p>
+                                                            </div>
+                                                        <div style={{display:"flex"}}>
+                                                        <h6 style={{width:150, fontWeight:"bold"}}>Phone Number:</h6>
+                                                        <p style={{marginLeft:-2, paddingTop:3}}>{e.phone}</p>
+                                                            </div>
+                                                        <div style={{display:"flex"}}>
+                                                        <h6 style={{fontWeight:"bold"}}>Address:</h6>
+                                                        <p style={{marginLeft:10, paddingTop:3}}>
+                                                        {e.address1}<br />
+                                                        </p>
+                                                            </div>
+                                                        <br />
                                                         </div>
                                                         </div>
-                                                            )}):''}
+                                                    </div>
+                                                    </div>
+                                                        )}):''}
 <div class="col-md-4" style={{padding:10, }}>
-   <div style={{padding:20, textAlign:"center",boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d"}}>
-   <Link style={{paddingTop:15}} to={`${process.env.PUBLIC_URL}/add_address`} >
-   <div style={{marginTop:120, marginBottom:120}}>
-   <FiPlusCircle size={80}  style={{color:"#13743F"}} />
- <br />
- <br />
- <span style={{color:"#13743F"}}>Add New Address</span>
+<div style={{padding:20, textAlign:"center",boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d"}}>
+<Link style={{paddingTop:15}} to={`${process.env.PUBLIC_URL}/add_address`} >
+<div style={{marginTop:120, marginBottom:120}}>
+<FiPlusCircle size={80}  style={{color:"#13743F"}} />
+<br />
+<br />
+<span style={{color:"#13743F"}}>Add New Address</span>
 </div>
-       </Link>
-                                                        </div>
-                                                        </div>
-                                                            </Slider>
+   </Link>
+                                                    </div>
+                                                    </div>
+                                                        </Slider>
+                                                    :''}
+                                                     
                                                     </div>
                                                 </div>
                                             </div>

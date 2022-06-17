@@ -37,7 +37,7 @@ class Coolncool extends Component {
         document.querySelector(".loader-wrapper").style = "display: block";
       }
     render() {
-        let { categories } = this.props;
+        let { categories,user } = this.props;
       
         const imageLoaded = () => {
             this.counter.current += 1;
@@ -105,7 +105,10 @@ class Coolncool extends Component {
                 <HeaderThree logoName={'logo/14.png'} history={this.props.history} />
             <div style={{height:60}} ></div>
                 <section className=" pt-1 larg-slider">
+                    {(user.sliderImages.data)?
                     <WovistaCarousel />
+                    
+                :''}
                 </section>
                 <Collection type={'new'} title="New Arrivals" />
              
@@ -193,6 +196,7 @@ this.state.loadingCategory ?
 }
 const mapStateToProps = (state) => ({
    
-    categories: state.data.menu,
+  user: state.images,
+  categories: state.data.menu,
 })
 export default connect(mapStateToProps)(Coolncool);

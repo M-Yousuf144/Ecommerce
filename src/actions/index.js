@@ -482,6 +482,9 @@ export const getLogout = () =>(dispatch) =>{
         progress: undefined,
         bodyClassName: 'toastStyle',
     });
+    shop.getWishlist(e=>{
+        dispatch(dispatchWishlist(e));
+        });
      window.location.replace("/");
          });
 }
@@ -513,10 +516,8 @@ export const SendContact = (data) =>(dispatch) =>{
      });
 }
 export const removeWishlist = (data) =>(dispatch) =>{
-        //  document.querySelector(".loader-wrapper").style = "display: block";
+ 
     shop.removeWishlistItem(data,e=>{
-       
-        // document.querySelector(".loader-wrapper").style = "display: none";   
         shop.getWishlist(e=>{
             dispatch(dispatchWishlist(e));
             });
@@ -528,10 +529,7 @@ export const removeWishlist = (data) =>(dispatch) =>{
             shop.getDeals(e=>{
                 dispatch(dispatchDeals(e));
                 });
-
-
-
-
+                document.querySelector(".loader-wrapper").style = "display: none";
      });
 
 

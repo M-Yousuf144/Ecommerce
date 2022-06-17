@@ -15,6 +15,7 @@ class wishList extends Component {
     }
     render (){
         function handleClick(e) {
+            document.querySelector(".loader-wrapper").style = "display: block";
             store.dispatch(removeWishlist(e));
         }
         function movetocartitem(e) {
@@ -76,8 +77,8 @@ class wishList extends Component {
                                                 <p>{(item.product.in_stock == true)? 'In Stock ' : 'Out Of Stock'}</p>
                                                 </td>
                                                 <td>
-                                                    <DeleteIcon className='mx-3' onClick={() => handleClick(item.product.id)}/>
-                                                    <ShoppingCartIcon className='mx-3' onClick={() => movetocartitem(item.id)} />
+                                                    <DeleteIcon className='mx-3' onClick={() => handleClick(item.product.id)} style={{cursor:'pointer'}}/>
+                                                    <ShoppingCartIcon className='mx-3' onClick={() => movetocartitem(item.id)} style={{cursor:'pointer'}} />
                                                 </td>
                                             </tr>
                                             </tbody> )

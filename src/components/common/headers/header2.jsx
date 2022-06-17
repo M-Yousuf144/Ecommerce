@@ -26,6 +26,7 @@ const Header2 = ({ wishList, cart, compare, getWishlist, cartData, user }) => {
 		store.dispatch(searchProduct(data));
 	}
 	function handleClick(e) {
+		document.querySelector(".loader-wrapper").style = "display: block";
 		e.preventDefault();
 		store.dispatch(getLogout());
 		store.dispatch(userLogoff([]));
