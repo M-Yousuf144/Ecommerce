@@ -161,36 +161,19 @@ function sendid (e) {
                                 </SlideToggle>
                             </div>
                                
-                                {/* <div class="dashboard-left" style={{boxShadow:"0px 10px 20px rgba(0,0,0,0.09)", padding: "30px 10px", borderRadius:10}}>
-                                    
-                                    <div class="block-content" style={{border:"none"}}>
-                                        <ul>
-                                            <Link to={`${process.env.PUBLIC_URL}/myOrders`}>
-                                                <li class="last my-2"><a style={{paddingTop:5}}>
-                                                    <FiList size={20} /> &nbsp;
-                                                    My Orders</a>
-                                                </li>
-                                                </Link>
-                                         </ul>
-                                        <ul style={{marginTop:15}}>
-                                            <li class="last"><a style={{paddingTop:5}} onClick={handleClick}>
-                                                <FiLogOut size={20} /> &nbsp;
-                                                Log Out</a></li>
-                                        </ul>
-                                    </div>
-                                </div> */}
+                        
                             </div>
                             <div class="col-md-9">
                                 <div class="dashboard-right">
                                     <div class="dashboard" style={{border:"none", borderRadius:10}}>
                                         <div class="welcome-msg my-2">
                                             {/* <p>Hello, <span class="text-capitalize">{Customer.data.name}</span></p> */}
-                                            <p style={{fontWeight:"normal", textAlign:"center", fontSize:16}}>From your My Account Dashboard you have the ability to view a snapshot of
+                                            <p style={{fontWeight:"normal", textAlign:"left", fontSize:16}}>From your My Account Dashboard you have the ability to view a snapshot of
                                                 your recent account activity and update your account information. Select
                                                 a link below to view or edit information.</p>
                                         </div>
                                         <div class="box-account box-info">
-                                            <div class="box-head my-4" style={{textAlign:"center" , paddingTop:25}}>
+                                            <div class="box-head my-4" style={{textAlign:"center" , paddingTop:28}}>
                                                 <h2 style={{fontWeight:600, fontSize:30}}>Account Information</h2>
                                             </div>
                                             <div class="row">
@@ -205,31 +188,34 @@ function sendid (e) {
                                                             <h3>Contact Information</h3>
                                                             <Link to={`${process.env.PUBLIC_URL}/profileDetails`}><a style={{paddingTop:20, paddingRight:15}}><FiEdit color='#13743F' size={20} /></a></Link>
                                                         </div>
-                                                     
+                                                     {(Info.data)?
                                                         <div class="box-content row" style={{padding:8,}}>
-                                                    <div className="col-md-8">
-
-                                                            <h6 className='my-1'><i class="fa fa-user-circle-o my-2 " style={{fontSize:"20px"}} aria-hidden="true"></i><span class="p-2 text-capitalize" style={{paddingLeft:80, paddingBottom:10,whiteSpace:"pre-wrap", fontSize:"1em", wordBreak:"break-all",  }}>{(Info)?Info.data.name:''}</span></h6>
-                                                            <h6 className='my-1'><i class="fa fa-envelope-o my-2" style={{fontSize:"20px"}} aria-hidden="true"></i><span class="p-2 "  style={{paddingLeft:80, paddingBottom:10,whiteSpace:"pre-wrap", fontSize:"1em", wordBreak:"break-all",  }}>{(Info)?Info.data.email:''}</span></h6>
-                                                            <span className='row'>
-
-{
-    (Info.data.phone !== null && Info.data.phone !== "") ?
-    <h6 className='my-1 col-md-6 text-center'><i class="fa fa-phone my-2" style={{fontSize:20}} aria-hidden="true"></i><span class="p-2 text-capitalize"  style={{paddingLeft:80, paddingBottom:10}}>{(Info)?Info.data.phone:''}</span></h6>
-:
-null
-}
-                                                            
-                                                            <h6 className='my-1 col-md-6 text-center' style={{paddingTop:7,cursor:'pointer', fontSize:12}}><a onClick={handleShow} style={{color:"#13743F"}}>Change Password ? </a></h6>
-                                                         
-                                                         
-                                                            </span>
-                                                    </div>
-                                                    <div className="col-md-4  text-center">
-
-                                                    <img  width="120px" alt="image"  src={Info.data.profile !== null ? Info.data.profile : image} />
-                                                    </div>
+                                                        <div className="col-md-8">
+    
+                                                                <h6 className='my-1'><i class="fa fa-user-circle-o my-2 " style={{fontSize:"20px"}} aria-hidden="true"></i><span class="p-2 text-capitalize" style={{paddingLeft:80, paddingBottom:10,whiteSpace:"pre-wrap", fontSize:"1em", wordBreak:"break-all",  }}>{(Info)?Info.data.name:''}</span></h6>
+                                                                <h6 className='my-1'><i class="fa fa-envelope-o my-2" style={{fontSize:"20px"}} aria-hidden="true"></i><span class="p-2 "  style={{paddingLeft:80, paddingBottom:10,whiteSpace:"pre-wrap", fontSize:"1em", wordBreak:"break-all",  }}>{(Info)?Info.data.email:''}</span></h6>
+                                                                <span className='row'>
+    
+    {
+        (Info.data.phone !== null && Info.data.phone !== "") ?
+        <h6 className='my-1 col-md-6 text-center'><i class="fa fa-phone my-2" style={{fontSize:20}} aria-hidden="true"></i><span class="p-2 text-capitalize"  style={{paddingLeft:"20", paddingBottom:10,textAlign:"left"}}>{(Info)?Info.data.phone:''}</span></h6>
+    :
+    null
+    }
+                                                                
+                                                                <h6 className='my-1 col-md-6 text-center' style={{paddingTop:7,cursor:'pointer', fontSize:12}}><a onClick={handleShow} style={{color:"#13743F"}}>Change Password ? </a></h6>
+                                                             
+                                                             
+                                                                </span>
                                                         </div>
+                                                        <div className="col-md-4  text-center">
+    
+                                                        <img  width="120px" alt="image"  src={Info.data.profile !== null ? Info.data.profile : image} />
+                                                        </div>
+                                                            </div>
+                                                    :''
+                                                    }
+                                                     
 
 
 
@@ -247,68 +233,72 @@ null
                                                     </div>
                                                     <div class="row"  >
                                                         {(Address)?
-                                                        <Slider {...settings} class="slide-1 offer-slider">
-                                                        {(Address.length !== 0)?
-                                                        Address.map((e,i)=>{
-return(
-                                                    <div key={i} class="col-md-4" style={{padding:10}}>
-                                                     <div className='row' style={{padding:20,boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d",height:"400px"}}>
-                                                        <div className='col-md-8 text-center'>
-                                                        <h3 style={{paddingTop:0, fontWeight:"bold",   paddingBottom:10}}>Address {i + 1}</h3>
-                                                       </div>
-                                                        <div className='col-md-4 text-center'>
-                                                        <Link  to={`${process.env.PUBLIC_URL}/address`} ><FiEdit color='#13743F' className='mx-2'  onClick={()=>sendid(e.id)} size={20} /></Link>
-                                                        <FiTrash2 className='mx-2' color='grey' onClick={()=>getaddressid(e.id)} size={20} />
-                                                        </div>
-                                                        <div className="row" >
-                                                        <div>
-                                                            <div style={{display:"flex"}}>
-                                                        <h6 style={{fontWeight:"bold"}}>Country:</h6>
-                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.country}</p>
+                                                                <Slider {...settings} class="slide-1 offer-slider">
+                                                                {(Address.length !== 0)?
+                                                                Address.map((e,i)=>{
+    return(
+                                                              <div key={i} class="col-md-4" style={{padding:10}}>
+                                                                  {/* <a href="#" className='control_next'>&raquo;</a>
+                                                                  <a href="#" className='control_prev'>&#8249;</a> */}
+    
+                                                             <div className='row' style={{padding:20,boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d",height:"400px"}}>
+                                                                <div className='col-md-8 text-center'>
+                                                                <h3 style={{paddingTop:0, fontWeight:"bold",   paddingBottom:10}}>Address {i + 1}</h3>
+                                                               </div>
+                                                                <div className='col-md-4 text-center'>
+                                                                <Link  to={`${process.env.PUBLIC_URL}/address`} ><FiEdit color='#13743F' className='mx-2'  onClick={()=>sendid(e.id)} size={20} /></Link>
+                                                                <FiTrash2 className='mx-2' color='grey' onClick={()=>getaddressid(e.id)} size={20} />
+                                                                </div>
+                                                                <div className="row" >
+                                                                <div>
+                                                                    <div style={{display:"flex"}}>
+                                                                <h6 style={{fontWeight:"bold"}}>Country:</h6>
+                                                                <p style={{marginLeft:10, paddingTop:3}}>{e.country}</p>
+                                                                    </div>
+                                                                    <div style={{display:"flex"}}>
+                                                                <h6 style={{fontWeight:"bold"}}>City:</h6>
+                                                                <p style={{marginLeft:10, paddingTop:3}}>{e.city}</p>
+                                                                    </div>
+                                                                    <div style={{display:"flex"}}>
+                                                                <h6 style={{fontWeight:"bold"}}>State:</h6>
+                                                                <p style={{marginLeft:10, paddingTop:3}}>{e.state}</p>
+                                                                    </div>
+                                                                    <div style={{display:"flex"}}>
+                                                                <h6 style={{fontWeight:"bold"}}>Post Code:</h6>
+                                                                <p style={{marginLeft:10, paddingTop:3}}>{e.postcode}</p>
+                                                                    </div>
+                                                                <div style={{display:"flex"}}>
+                                                                <h6 style={{width:150, fontWeight:"bold"}}>Phone Number:</h6>
+                                                                <p style={{marginLeft:-2, paddingTop:3}}>{e.phone}</p>
+                                                                    </div>
+                                                                <div style={{display:"flex"}}>
+                                                                <h6 style={{fontWeight:"bold"}}>Address:</h6>
+                                                                <p style={{marginLeft:10, paddingTop:3}}>
+                                                                {e.address1}<br />
+                                                                </p>
+                                                                    </div>
+                                                                <br />
+                                                                </div>
+                                                                </div>
                                                             </div>
-                                                            <div style={{display:"flex"}}>
-                                                        <h6 style={{fontWeight:"bold"}}>City:</h6>
-                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.city}</p>
                                                             </div>
-                                                            <div style={{display:"flex"}}>
-                                                        <h6 style={{fontWeight:"bold"}}>State:</h6>
-                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.state}</p>
+                                                                )}):''}
+    <div class="col-md-4" style={{padding:10, }}>
+       <div style={{padding:20, textAlign:"center",boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d"}}>
+       <Link style={{paddingTop:15}} to={`${process.env.PUBLIC_URL}/add_address`} >
+       <div style={{marginTop:120, marginBottom:120}}>
+       <FiPlusCircle size={80}  style={{color:"#13743F"}} />
+     <br />
+     <br />
+     <span style={{color:"#13743F"}}>Add New Address</span>
+    </div>
+           </Link>
                                                             </div>
-                                                            <div style={{display:"flex"}}>
-                                                        <h6 style={{fontWeight:"bold"}}>Post Code:</h6>
-                                                        <p style={{marginLeft:10, paddingTop:3}}>{e.postcode}</p>
                                                             </div>
-                                                        <div style={{display:"flex"}}>
-                                                        <h6 style={{width:150, fontWeight:"bold"}}>Phone Number:</h6>
-                                                        <p style={{marginLeft:-2, paddingTop:3}}>{e.phone}</p>
-                                                            </div>
-                                                        <div style={{display:"flex"}}>
-                                                        <h6 style={{fontWeight:"bold"}}>Address:</h6>
-                                                        <p style={{marginLeft:10, paddingTop:3}}>
-                                                        {e.address1}<br />
-                                                        </p>
-                                                            </div>
-                                                        <br />
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                        )}):''}
-<div class="col-md-4" style={{padding:10, }}>
-<div style={{padding:20, textAlign:"center",boxShadow:"0px 0px 5px 10px rgba(0,0,0,0.01)",backgroundColor:"#0000000d"}}>
-<Link style={{paddingTop:15}} to={`${process.env.PUBLIC_URL}/add_address`} >
-<div style={{marginTop:120, marginBottom:120}}>
-<FiPlusCircle size={80}  style={{color:"#13743F"}} />
-<br />
-<br />
-<span style={{color:"#13743F"}}>Add New Address</span>
-</div>
-   </Link>
-                                                    </div>
-                                                    </div>
-                                                        </Slider>
-                                                    :''}
-                                                     
+                                                                </Slider>
+                                                    :''
+                                                    }
+                                           
                                                     </div>
                                                 </div>
                                             </div>

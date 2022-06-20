@@ -58,8 +58,9 @@ class BillingOptions extends Component {
 
 <table class="table table-bordered ">
 
-<thead class="table-dark">
-<tr>
+<thead class="base_color" style={{backgroundColor:"#13743F"}}>
+<tr style={{color:"white"}}>
+
       <th scope="col">#</th>
       <th scope="col">Products</th>
       <th scope="col">Price</th>
@@ -101,7 +102,7 @@ class BillingOptions extends Component {
 
 
 <div className="py-4">
-    <h3>Shipping & Billing</h3>
+<h3 style={{color:"#13743F",fontSize:"28px",fongtWeight:"bold"}}>Shipping & Billing</h3>
     </div>
 
 <div className='py-2' style={{display:"flex", justifyContent:"space-between"}}>
@@ -164,8 +165,8 @@ class BillingOptions extends Component {
 
 
 
+<button class="btn btn-success w-100 py-3 my-3" style={{background:"#13743F"}}  onClick={(e) => this.saveOrder()}  type="submit">Confirm Order</button>
 
-<button class="btn btn-success w-100 py-3 my-3"  onClick={(e) => this.saveOrder()}  type="submit">Confirm Order</button>
 
 </div>
 

@@ -48,7 +48,7 @@ useEffect(()=>{
 		
 	  setDrop(true);
 	  setShowSearch(true);
-	  setprofile(true);
+
 	
 	}
 
@@ -129,7 +129,7 @@ useEffect(()=>{
 							</div>
 : null
 							}
-							<div class="header-item item-right" style={{ marginBottom: 10,marginTop: 10 }}>
+							<div class="header-item item-right" style={{ marginBottom: "-17px",marginTop: "7px" }}>
 {
 	drop ?
 	null
@@ -145,17 +145,17 @@ useEffect(()=>{
     "& .MuiBadge-badge": {
       color: "#fff",
       backgroundColor: "#13743F",
-	  marginRight:'12px',
+	  marginRight:'15px',
     }
   }} style={{ fontSize: 20, marginRight: 5, color: "#fff" }} >
-										<a><FiHeart style={{ fontSize: 25, marginRight: 12 }} /></a>
+										<a><FiHeart style={{ fontSize: 23, marginRight: 11 }} /></a>
 									</Badge>
 								</Link>
 
 
 
 
-	<FiUser onClick={()=>setprofile(!profile)} style={{ fontSize: 25, marginRight: 5, color:"#555555" }} />
+	<FiUser onClick={()=>setprofile(!profile)} style={{ fontSize: 24, marginRight: 8, color:"#555555" }} />
 							
 {
 	(profile == true)?

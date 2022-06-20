@@ -310,7 +310,7 @@ class ShopPage extends Component {
                             <span class="circle__content">{data.Discount_Percentage}</span>
                         </div>
                     :
-                    <div class="circle" style={{ backgroundColor: 'white' }}>
+                    <div class="circle" style={{ backgroundColor: '#ffffff00' }}>
                         <span class="circle__content">{data.Discount_Percentage}</span>
                     </div>
 

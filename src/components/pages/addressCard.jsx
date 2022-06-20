@@ -93,7 +93,7 @@ class AddressCard extends Component {
                   <div key={i} class="col-md-4" style={{ padding: 10 }}>
                     <div style={{ padding: 20, boxShadow: "0px 0px 5px 10px rgba(0,0,0,0.01)", backgroundColor: "#0000000d" }}>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
-                        <h3 style={{ paddingTop: 20, paddingBottom: 10 }}>Address {i + 1}</h3>
+                        <h3 className='cart-address-h3' style={{ paddingTop: 20, paddingBottom: 10 }}>Address {i + 1}</h3>
                         <div>
                           <Link style={{ paddingTop: 15 }} to={`${process.env.PUBLIC_URL}/address`} >
                             <FiEdit className='mx-2' color='#13743F' onClick={() => sendid(e.id)} size={25} /></Link>
@@ -102,28 +102,28 @@ class AddressCard extends Component {
                       <div className="row" >
                         <div>
                           <div style={{ display: "flex" }}>
-                            <h5>Country:</h5>
-                            <p style={{ marginLeft: 10, paddingTop: 4 }}>{e.country}</p>
+                            <h5 className='cart-address-h5'>Country:</h5>
+                            <p className='cart-address-p' style={{ marginLeft: 10, paddingTop: 4 }}>{e.country}</p>
                           </div>
                           <div style={{ display: "flex" }}>
-                            <h5>City:</h5>
-                            <p style={{ marginLeft: 10, paddingTop: 4 }}>{e.city}</p>
+                            <h5 className='cart-address-h5'>City:</h5>
+                            <p className='cart-address-p' style={{ marginLeft: 10, paddingTop: 4 }}>{e.city}</p>
                           </div>
                           <div style={{ display: "flex" }}>
-                            <h5>State:</h5>
-                            <p style={{ marginLeft: 10, paddingTop: 4 }}>{e.state}</p>
+                            <h5 className='cart-address-h5'>State:</h5>
+                            <p  className='cart-address-p' style={{ marginLeft: 10, paddingTop: 4 }}>{e.state}</p>
                           </div>
                           <div style={{ display: "flex" }}>
-                            <h5>Post Code:</h5>
-                            <p style={{ marginLeft: 10, paddingTop: 4 }}>{e.postcode}</p>
+                            <h5 className='cart-address-h5'>Post Code:</h5>
+                            <p className='cart-address-p' style={{ marginLeft: 10, paddingTop: 4 }}>{e.postcode}</p>
                           </div>
                           <div style={{ display: "flex" }}>
-                            <h5 style={{ width: 150 }}>Phone Number:</h5>
-                            <p style={{ marginLeft: 2, paddingTop: 4 }}>{e.phone}</p>
+                            <h5 className='cart-address-h5'>Phone Number:</h5>
+                            <p className='cart-address-p' style={{ marginLeft: 10, paddingTop: 4 }}>{e.phone}</p>
                           </div>
-                          <div style={{ display: "flex" }}>
-                            <h5>Address:</h5>
-                            <p style={{ marginLeft: 10, paddingTop: 4 }}>
+                          <div  style={{ display: "flex" }}>
+                            <h5 className='cart-address-h5'>Address:</h5>
+                            <p className='cart-address-p' style={{ marginLeft: 10, paddingTop: 4 }}>
                               {e.address1}<br />
                             </p>
                           </div>

@@ -108,7 +108,8 @@ class Coolncool extends Component {
                     {(user.sliderImages.data)?
                     <WovistaCarousel />
                     
-                :''}
+                :                                        <div class="skeleton-item skeleton-copy-full-slider"></div>
+            }
                 </section>
                 <Collection type={'new'} title="New Arrivals" />
              

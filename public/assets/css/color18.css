@@ -39,6 +39,136 @@
 /*=====================
     1.General CSS start
 ==========================*/
+
+@media (min-width: 470px)  and (max-width: 640px) {
+  .cart-flow{
+    padding-top: 10%;
+  }
+}
+@media (min-width: 640px)  and (max-width: 970px) {
+  .cart-flow{
+    padding-top: 7%;
+  }
+}
+ @media screen and (max-width: 390px) {
+  .cart-img-div{
+    margin-right: 20px;
+  }
+ }
+
+@media screen and (max-width: 470px) {
+  .shipping-top{
+    padding-top: 0px !important;
+  }
+  .skeleton-copy-full-slider{
+    height: 220px;
+    width: 96%;
+    }
+  .cart-btn{
+    margin: 2% 0% 6% 39% !important;
+  }
+  .wishlist-top{
+    padding-top: 18% !important;
+  }
+  .cart-text{
+    color: #13743F;
+    font-weight: 800;
+    text-align: center;
+  }
+  .cart-address-p{
+    font-size: 12px;
+  }
+  .cart-address-h5{
+    font-size: 14px;
+  }
+  .cart-address-h3{
+    font-size: 20px;
+    padding-top: 0px !important;
+  }
+  .cart-flow{
+    padding-top: 20%;
+  }
+  .skeleton-copy-full-viewOrder{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 0%;
+  }
+  .card{
+    max-width: 95%;
+  }
+  .useravatar-main{
+   right: 0px;
+   top: 315px;
+   box-shadow: -2px -1px 4px 2px rgb(0 0 0 / 10%);
+   background-color: #fdfdfd;
+   padding: 10px;
+   border-radius: 15px;
+    position: absolute;
+ }
+ .header{
+   padding-bottom: 12px;
+ }
+ }
+ @media (min-width: 470px) and (max-width: 970px) {
+   .cart-text{
+     color: #13743F;
+     font-weight: 800;
+     text-align: center;
+   }
+.skeleton-copy-full-slider{
+height: 220px;
+width: 96%;
+
+}
+.skeleton-copy-full-viewOrder{
+  width: 96%;
+  margin-left: 2%;
+margin-top: 0%;
+}
+   .wishlist-top{
+    padding-top: 18% !important;
+  }
+   .cart-btn{
+    margin: 2% 0% 6% 39% !important;
+  }
+  .shipping-top{
+    padding-top: 0px !important;
+  }
+   .header{
+     padding-bottom: 12px;
+   }
+   .cart-address-h5{
+    font-size: 14px;
+  }
+  .cart-address-p{
+    font-size: 12px;
+  }
+  .cart-address-h3{
+    font-size: 20px;
+    padding-top: 0px !important;
+  }
+   .card{
+    max-width: 95%;
+  }
+   .useravatar-main{
+     right: 0px;
+     top: 315px;
+     box-shadow: -2px -1px 4px 2px rgb(0 0 0 / 10%);
+     background-color: #fdfdfd;
+     padding: 10px;
+     border-radius: 15px;
+   position: absolute;
+   
+   }
+  }
+  a.control_prev {
+   border-radius: 0 2px 2px 0;
+ }
+ a.control_next {
+   right: 0;
+   border-radius: 2px 0 0 2px;
+ }
+ 
 .base_color{
   color:#13743F ;
 }

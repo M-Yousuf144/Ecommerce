@@ -86,11 +86,22 @@ $skeleton-dark-highlight: lighten($skeleton-dark-background, 4%);
 	height:40px;
 	// margin:16px 8px 32px;
 }
+.skeleton-copy-full-viewOrder{
+	width:45%;
+	height:500px;
+  margin-top: 6%;
+  margin-left: 28%;
+}
 
 .skeleton-copy-full{
 	width:94%;
 	height:16px;
 	margin:16px 8px;
+}
+.skeleton-copy-full-slider{
+	width:99%;
+	height:500px;
+	margin:18px 8px;
 }
 .skeleton-copy-fullsa{
 	width:94%;

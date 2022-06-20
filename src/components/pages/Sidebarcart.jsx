@@ -60,7 +60,7 @@ class CartSidebars extends Component {
     return (
         <>
         {(cartData.items)?
-        <div>
+        <div className='cart-flow'>
         <Box sx={{ width: '100%',paddingTop:'6%' }} root={{color:"green"}}>
       <Stepper activeStep={this.state.activepage} alternativeLabel >
         {steps.map((label) => (
@@ -106,7 +106,7 @@ class CartSidebars extends Component {
 <div className="col-lg-4"></div>
 <div className="col-lg-4"></div>
 <div className="col-lg-4">
-<a class="btn btn-solid shipping_check" style={{borderRadius:6, fontSize:15,margin:'2%',marginLeft:'5%'}} onClick={e =>this.setState({page:'shipping',activepage:1})}>Next</a>
+<a class="btn btn-solid shipping_check cart-btn" style={{borderRadius:7, fontSize:15,margin:'2%',marginLeft:'60%'}} onClick={e =>this.setState({page:'shipping',activepage:1})}>Next</a>
 </div>
 </div>
 :''
@@ -123,10 +123,9 @@ class CartSidebars extends Component {
 {
 (this.state.page == 'shipping' && cartData.payment != null)?
 <div className="row">
-<div className="col-lg-1"></div>
-
-<div className="col-lg-4">
-<a class="btn btn-solid" style={{borderRadius:6, fontSize:15,margin:'2%',marginLeft:'5%'}} onClick={e =>this.setState({page:'checkout',activepage:2})}>Next</a>
+<div className="col-lg-8"></div>
+<div className="col-lg-2">
+<a class="btn btn-solid cart-btn" style={{borderRadius:7, fontSize:15,margin:'2%',marginLeft:'5%'}} onClick={e =>this.setState({page:'checkout',activepage:2})}>Next</a>
 </div>
 <div className="col-lg-4"></div>
 <div className="col-lg-3"></div>
@@ -156,22 +155,23 @@ class CartSidebars extends Component {
         {cartData.items.map((item, index) => {
            return (
         <div className="row" style={{textAlign:"center",paddingTop:'2%'}}>
-            <div className="col-lg-3">
-            <img src={(item.product != '')?item.product.images[0].url:Demoimg} style={{width:"70px",height:"70px",padding:'7px',paddingTop:'0px'}} />
+            <div className="col-lg-3 col-sm-3 col-3 cart-img-div">
+            <img src={(item.product != '')?item.product.images[0].url:Demoimg}  style={{width:"80px",height:"80px",padding:'7px',paddingTop:'0px'}} />
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-8 col-sm-8 col-8">
                 <div className="row" >
-                    <div className="col-lg-12" style={{textAlign:'left'}} >
-                        <p style={{lineHeight:'20px'}}>{item.name}</p>
+                    <div className="col-lg-12 col-sm-12 col-12" style={{textAlign:'left'}} >
+                        <p style={{lineHeight:'25px'}}>{item.name}</p>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-4 col-sm-4 col-4">
                         <p> {item.formated_price}</p>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-sm-6 col-6">
                         <p> x{item.quantity}</p>
                     </div>
                 </div>
             </div>
+            <hr />
     </div>
 
     

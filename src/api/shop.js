@@ -374,7 +374,8 @@ console.log('add cart',res)
  },
  
  removecartitem:(payload,cb,timeout)=>{
-  getData(url.temp_url+url.deletecartitem+payload+(check_login !== null)?'?token=true':'')
+ let full_url = (check_login !== null)?url.temp_url+url.deletecartitem+payload+'?token=true':url.temp_url+url.deletecartitem+payload
+  getData(full_url)
   .then(async res => {
     cb(res.data);
   });
@@ -382,8 +383,8 @@ console.log('add cart',res)
 
 
 updatecart:(payload,cb,timeout)=>{
-  
-  getputData(url.temp_url+url.cartUpdate+(check_login !== null)?'?token=true':''+payload)
+  let full_url = (check_login !== null)?url.temp_url+url.cartUpdate+'?token=true'+payload:url.temp_url+url.cartUpdate+payload
+  getputData(full_url)
   .then(res => {
     cb(res.data);
   });

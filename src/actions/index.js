@@ -792,6 +792,10 @@ export const updateProfile = (data) =>(dispatch) =>{
         setTimeout(function(){
             window.location.href = '/dashboard';
          }, 2000);
+         shop.getcustomer(e =>{
+            dispatch(dispatchgetcustomer(e));
+        });
+
      });
 }
 export const viewOrderDetail = (data) =>(dispatch) =>{

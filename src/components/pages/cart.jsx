@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@mui/material';
 import { FiShoppingCart } from "react-icons/fi";
 import { connect } from 'react-redux';
+import { MdOutlineShoppingBag } from "react-icons/md";
 
  function  TemporaryDrawer(props) {
     
@@ -32,7 +33,7 @@ let final_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items
 
   const list = (anchor) => (
     <Box  
-      sx={{  width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{  width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 330 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -40,7 +41,7 @@ style={{ overflowX: 'hidden'}}
       
     >
       <List >
-       <h4 style={{textAlign:"center",padding:'11%'}}>Shopping Cart</h4>
+      <h4 className='base_color' style={{textAlign:"center",padding:'9%',fontWeight:"bold",fontSize:"28px"}}><MdOutlineShoppingBag/>&nbsp;&nbsp;Shopping Cart</h4>
       </List>
       <Divider />
       {(cartData) ?
@@ -51,18 +52,18 @@ style={{ overflowX: 'hidden'}}
              return (
              
           <div className="row" style={{textAlign:"center"}}>
-              <div className="col-lg-3">
-              <img src={(item.product != '')?item.product.images[0].url:Demoimg} style={{width:"70px",height:"70px",padding:'7px',paddingTop:'0px'}} />
+              <div className="col-lg-4">
+              <img src={(item.product != '')?item.product.images[0].url:Demoimg} style={{width:"80px",height:"100px",padding:'7px',paddingTop:'0px'}} />
               </div>
               <div className="col-lg-8">
                   <div className="row" >
                       <div className="col-lg-12" style={{textAlign:'left'}} >
-                          <p style={{lineHeight:'20px'}}>{item.name}</p>
+                          <p className="cart-text"  style={{lineHeight:'20px'}}>{item.name}</p>
                       </div>
                       <div className="col-lg-6">
                           <p> {item.formated_price}</p>
                       </div>
-                      <div className="col-lg-6">
+                      <div className="col-lg-8" style={{fontWeight:500,color:"#13743F"}}>
                           <p> x{item.quantity}</p>
                       </div>
                   </div>
@@ -161,7 +162,7 @@ style={{ overflowX: 'hidden'}}
       backgroundColor: "#13743F",
     }
   }} style={{ fontSize: 20, marginRight: 15, color: "#fff" }}>
-										<a><FiShoppingCart style={{ fontSize: 20, marginRight: 2 , marginBottom:'8px'}} /></a>
+										<a><FiShoppingCart style={{ fontSize: 23, marginRight: 2 , marginBottom:'14px'}} /></a>
 									</Badge></Button>
           <Drawer
             anchor={'right'}

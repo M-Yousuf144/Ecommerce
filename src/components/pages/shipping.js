@@ -54,7 +54,7 @@ class ShippingOptions extends Component {
                   
                 </Helmet>
 
-<div style={{paddingTop:100}}>
+<div className='shipping-top' style={{paddingTop:100}}>
 
                <h1 style={{fontSize:25,marginLeft:50 }}>Select Shipping Method</h1>
 

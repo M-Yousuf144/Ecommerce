@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom'
 import store from '../../store';
 import {getCartTotal} from "../../services";
 import {removeFromCart, incrementQty, decrementQty,dispatchgetCart,updatecart,removecartitem} from '../../actions'
-import DeleteIcon from '@mui/icons-material/Delete';
+// import DeleteIcon from '@mui/icons-material/Delete';
+import { MdDeleteOutline } from "react-icons/md";
 import Demoimg from '../../assets/images/portfolio/22.jpg';
 import {MdClose} from "react-icons/md";
 import "./cartResp.css"
@@ -18,7 +19,8 @@ class cartComponent extends Component {
     render (){
       
         function handleClick(e) {
-           var upatecartitem = `&&qty[${e[0]}]=${e[1]}`;
+            var upatecartitem = `&&qty[${e[0]}]=${e[1]}`;
+       
          store.dispatch(updatecart(upatecartitem));
         }
 
@@ -53,7 +55,7 @@ class cartComponent extends Component {
         <div class="row">
             <div class="col-sm-12">
                 <table class="table cart-table table-bordered table-responsive-xs">
-                <thead class="table-dark" style={{height:46}}>
+                <thead class="base_color" style={{height:50,backgroundColor:"#13743F"}}>
                     <tr class="table-head">
                         <th scope="col" className='text-light'>image</th>
                         <th scope="col" className='text-light'>product name</th>
@@ -69,7 +71,7 @@ class cartComponent extends Component {
                             <tr>
                                 <td>
                                 <MdClose className='vanishMe vanishD' style={{position:"absolute",right:20,}} onClick={() => removeitem(item.id)}/>
-                               <img src={(item.product != '')?item.product.images[0].url:Demoimg} style={{width:"70px",height:"70px"}} />
+                               <img src={(item.product != '')?item.product.images[0].url:Demoimg} style={{width:"80px",height:"80px"}} />
                              <p className='my-2 vanishMe'>{item.formated_price}</p>  
                                 </td>
                                 <td>
@@ -126,7 +128,7 @@ class cartComponent extends Component {
                                 </h2></td>
                                 <td>
                                     
-                                    <DeleteIcon onClick={() => removeitem(item.id)}/>
+                                    <MdDeleteOutline onClick={() => removeitem(item.id)} style={{cursor:'pointer'}}/>
                                 </td>
                             </tr>
                         </tbody> )

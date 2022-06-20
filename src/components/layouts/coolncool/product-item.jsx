@@ -97,7 +97,7 @@ class ProductItem extends Component {
                                                     <span class="circle__content">{product.api.Discount_Percentage}</span>
                                                 </div>
                                             :
-                                            <div class="circle" style={{ backgroundColor: 'white' }}>
+                                            <div class="circle" style={{ backgroundColor: '#ffffff00' }}>
                                                 <span class="circle__content">{product.api.Discount_Percentage}</span>
                                             </div>
                                         }
