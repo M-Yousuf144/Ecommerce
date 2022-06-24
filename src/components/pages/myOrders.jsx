@@ -29,7 +29,7 @@ class MyOrders extends Component {
 
   return (
     <>
-    <div  style={{ paddingTop:"10%",overflowX:'scroll'}}>
+    <div className='myOrder-top' style={{ paddingTop:"5%",overflowX:'scroll'}}>
 
 <table className='table' 
 style={{width:"100%", marginLeft:"0%"}}

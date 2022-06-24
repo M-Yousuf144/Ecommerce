@@ -78,6 +78,7 @@ returnsubmit = (e) =>{
                        <tbody>
                         {(getorders)?
                         <>
+                        {console.log(getorders)}
                         {(getorders.items)?getorders.items.map(item_data =>(
                             <tr>
                             <td>
@@ -180,7 +181,7 @@ returnsubmit = (e) =>{
                             </div>
                             <div class="col-md-6">
                                 <div class="p-3 d-flex justify-content-center align-items-center"> <span>
-                                    {(getorders)?getorders.formated_sub_total:''}
+                                    {(getorders)?getorders.formated_shipping_amount:''}
                                     </span> </div>
                             </div>
                         </div>

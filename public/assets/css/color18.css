@@ -55,8 +55,17 @@
     margin-right: 20px;
   }
  }
-
+ .myOrder-top::-webkit-scrollbar{
+  height: 8px;
+ }
 @media screen and (max-width: 470px) {
+  .myOrder-top{
+    padding-top: 22% !important;
+  }
+  #popup{
+    width: 95% !important;
+    left: 2% !important;
+    }
   .shipping-top{
     padding-top: 0px !important;
   }
@@ -119,6 +128,13 @@
 height: 220px;
 width: 96%;
 
+}
+.myOrder-top{
+  padding-top: 22% !important;
+}
+#popup{
+width: 95% !important;
+left: 2% !important;
 }
 .skeleton-copy-full-viewOrder{
   width: 96%;

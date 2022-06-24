@@ -90,8 +90,9 @@ class Coolncool extends Component {
         store.dispatch(sendSubscriberEmail(obj));
             closeModal();
         }
+        var top = (user.sliderBannner)? user.sliderBannner.filter(data => data.title == 'Banner Top'):[];
+        var bottom = (user.sliderBannner)? user.sliderBannner.filter(data => data.title == 'Banner Bottom'):[];
      
-      
         return (
             <div>
                 
@@ -113,8 +114,17 @@ class Coolncool extends Component {
                 </section>
                 <Collection type={'new'} title="New Arrivals" />
              
+            {/* top banner */}
+            {top.map(res=>(
+            <div style={{paddingBottom:'5%'}}>
+            <img src={res.image_url} width="100%" height="100%"/>
+            </div>
 
-             
+            ))}
+
+
+
+
                 <section className="pt-3 banner-6 ratio2_1">
                     <div className="container">
                         <div className="title1 title5">
@@ -167,6 +177,18 @@ this.state.loadingCategory ?
                             </Slider>
                     </div>
                 </section>
+
+
+                 {/* bottom banner */}
+            {bottom.map(res=>(
+            <div style={{paddingTop:'5%'}}>
+            <img src={res.image_url} width="100%" height="100%"/>
+            </div>
+
+            ))}
+
+
+
                 
             {(this.state.subscribeModal ==  true && this.state.checkstatus != 'true')?
             <div id="popup2">

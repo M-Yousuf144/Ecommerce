@@ -88,6 +88,9 @@ useEffect(()=>{
 									</li>
 								</Link>
 								<li className='mx-3 py-2'>
+												<Link to={`${process.env.PUBLIC_URL}/about-us`}>About</Link>
+								</li>
+								<li className='mx-3 py-2'>
 									<Link to={`${process.env.PUBLIC_URL}/shopPage`}><a>SHOP <i class=""></i></a></Link>
 								</li>
 								<li className='mx-3 py-2'>

@@ -384,6 +384,12 @@ export const dispatchviewDetail= (data) =>(dispatch) =>{
         data
     })
 }
+export const getpages= (data) =>(dispatch) =>{
+    dispatch({
+        type: types.GET_ALL_PAGES,
+        data
+    })
+}
 export const dispatchgetProductCategory= (data) =>(dispatch) =>{
     dispatch({
         type: types.GET_CATEGORY,
@@ -804,6 +810,14 @@ export const viewOrderDetail = (data) =>(dispatch) =>{
     document.querySelector(".loader-wrapper").style = "display: none";
      });
 }
+
+export const getAllPages = (data) =>(dispatch) =>{
+    shop.getpages(data,e =>{
+    dispatch(getpages(e))
+     });
+}
+
+
 export const CancelOrder = (data) =>(dispatch) =>{
     shop.CancelOrder(data,e =>{
         toast.success(e.message, {

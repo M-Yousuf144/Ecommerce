@@ -68,7 +68,7 @@ import { toast } from 'react-toastify';
      },
  
      getHomebanner:(cb,timeout) => {
-         getData(url.temp_url+url.getBanner+'banner')
+         getData(url.temp_url+url.getBanner+'web_banner')
          .then(async res => {
           
            cb(res.data.data);
@@ -268,16 +268,16 @@ import { toast } from 'react-toastify';
     .then( async res => {
     
       cb(res.data);
+    });
+  },
 
-      
+  getpages: (product_id,cb, timeout) => {
+    getData(url.temp_url+url.getPages)
+    .then( async res => {
+      cb(res.data);
     });
   },
   
-  //  getreivews:(cb) =>{
-  //    getData(url.temp_url+url.getReviews).then( async d =>{
-  //      cb(d.data);
-  //    });
-  //  },
    getOrders:(cb) =>{
      getData(url.temp_url+url.MyOrders).then( async d =>{
        cb(d.data);

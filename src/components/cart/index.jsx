@@ -10,6 +10,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import Demoimg from '../../assets/images/portfolio/22.jpg';
 import {MdClose} from "react-icons/md";
 import "./cartResp.css"
+
 class cartComponent extends Component {
 
     constructor (props) {
@@ -17,9 +18,10 @@ class cartComponent extends Component {
     }
 
     render (){
+        const check_login = localStorage.getItem("customerData");
       
         function handleClick(e) {
-            var upatecartitem = `&&qty[${e[0]}]=${e[1]}`;
+            var upatecartitem = (check_login !== null)?`&&qty[${e[0]}]=${e[1]}`:`?qty[${e[0]}]=${e[1]}`;
        
          store.dispatch(updatecart(upatecartitem));
         }

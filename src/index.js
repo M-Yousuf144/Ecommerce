@@ -14,8 +14,6 @@ import translations from './constants/translations'
 import { fetchMenu,
          getAllProducts ,
          fetchImages,
-        
-         
         fetchHomeBanner,
       
         fetchOrigin,
@@ -35,7 +33,8 @@ import { fetchMenu,
         getfilterProducts,
         fetchBestSeller,  
         fetchReviews,
-        dispatchgetOrders} from './actions'
+        dispatchgetOrders,
+        getAllPages} from './actions'
 import Landing from './components/landing'
 
 
@@ -75,20 +74,6 @@ import Register from './components/pages/register'
 import Contact from './components/pages/contact'
 import Dashboard from './components/pages/dashboard'
 import Faq from './components/pages/faq'
-
-// Blog Pages
-
-
-
-
-// Theme Element
-
-
-// Product Elements
-
-
-// Portfolio Features
-
 import registerForm from './components/pages/register';
 import Address from './components/pages/address';
 import Add_Address from './components/pages/add-address';
@@ -111,9 +96,6 @@ import CartSidebars from './components/pages/Sidebarcart';
 import HorizontalNonLinearStepper from './components/pages/bredcram';
 import Guest_Address from './components/pages/guest-address';
 import Notification from '../src/Notification'
-
-// import CheckoutNew from './components/pages/checkoutNew';
-
 
 
 
@@ -156,6 +138,7 @@ class Root extends React.Component {
         store.dispatch(getProductCategory());
         store.dispatch(updateaddress());
         store.dispatch(fetchReviews());
+        store.dispatch(getAllPages());
         
         
         

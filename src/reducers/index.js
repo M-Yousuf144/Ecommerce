@@ -12,7 +12,7 @@ import imageReducer from './images';
 import addressReducer from './address';
 import contactReducer from './contact';
 import orderReducer from './order';
-
+import PagesReducer from './Pages';
 const rootReducer = combineReducers({
     images: imageReducer,
     data: productReducer,
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
     address : addressReducer,
     contactDetails : contactReducer,
     orders: orderReducer,
-
+    pages:PagesReducer,
 
     Intl
 });

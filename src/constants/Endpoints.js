@@ -7,7 +7,7 @@ export const temp_url = "https://shop.makkiherbals.com/Admin/public/"
 export const encrypt_code = 'alisonstech'
 const check_login = localStorage.getItem("customerData");
 //  'http://ecommerce.alisonstech.com/public/'
-export const site_url = "http://localhost:3000/"
+export const site_url = "https://shop.makkiherbals.com/"
 export const categories = 'api/products?category_id='
 export const getBanner = 'api/sliders?slider_for='
 
@@ -62,3 +62,4 @@ export const getfeaturedProducts = 'api/products?featured=1&token=true';
 export const getnewProducts = 'api/new/allproducts?token=true';
 export const returnorder = 'api/refund-request';
 export const SubcriberEmail = 'api/subscriber-email';
+export const getPages = 'api/get-config-pages';
