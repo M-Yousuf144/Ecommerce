@@ -21,7 +21,6 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
-
 class ShopPage extends Component {
     constructor() {
         super()
@@ -33,9 +32,16 @@ class ShopPage extends Component {
             'Category': null,
             'category_id': null,
             'filter_by': null,
-            'link': ''
+            'link': '',	
+            'price_filter':false,	
+            'is_category':false,	
+            'sort':null,	
+            'is_sort':false
+            
         }
+       
     }
+  
     state = {
         layoutColumns: 3
     }
@@ -47,41 +53,76 @@ class ShopPage extends Component {
     openFilter = () => {
         document.querySelector(".collection-filter").style = "left: -15px";
     }
-    getFilter = (e, f) => {
-        this.setState({ Category: f, category_id: e })
-        this.setState({ age: 10 })
-        var cate = (e !== 0) ? '?category_id=' + e + '&token=true' : undefined;
-        store.dispatch(getfilterProducts(cate));
-        document.querySelector(".loader-wrapper").style = "display: block";
+    getFilter = (e, f) => {	
+        this.setState({ Category: f, category_id: e ,is_category:true})	
+        this.setState({ age: 10,  })	
+        var cate = (e !== 0) ? '?category_id=' + e + '&token=true' : undefined;	
+        store.dispatch(getfilterProducts(cate));	
+        document.querySelector(".loader-wrapper").style = "display: block";	
     }
 
 
-    getFilterPrice = () => {
-        var cate = '?price=' + this.state.min + ',' + this.state.max + '&token=true';
-        store.dispatch(getfilterProducts(cate));
-        this.setState({ age: 10 })
-        document.querySelector(".loader-wrapper").style = "display: block";
-    }
+    getFilterPrice = () => {	
+        this.setState({'price_filter':true})	
+        if(this.state.category_id !== 0){	
+        var cate = '?price=' + this.state.min + ',' + this.state.max +  '&category_id=' + this.state.category_id + '&token=true';	
+    }else{	
+            var cate = '?price=' + this.state.min + ',' + this.state.max + '&token=true';	
+        }	
+        store.dispatch(getfilterProducts(cate));	
+        this.setState({ age: 10 })	
+        document.querySelector(".loader-wrapper").style = "display: block";	
+    }	
+
 
     
 
-    FilterByPrice = (a) => {
-        var cate = (this.state.category_id == null) ? '?price_filter=' + a + '&token=true' : '?price_filter=' + a + '&' + 'category_id=' + this.state.category_id + '&token=true';
-
-        store.dispatch(getfilterProducts(cate));
-        document.querySelector(".loader-wrapper").style = "display: block";
+    FilterByPrice = (a) => {	
+        this.setState({'sort':a,'is_sort':true})	
+        if(this.state.price_filter == true){	
+        var cate = (this.state.category_id == null) ? '?sort_by_name=' + a + '&price=' + this.state.min + ',' + this.state.max + '&token=true' : '?sort_by_name=' + a +'&price=' + this.state.min + ',' + this.state.max + '&' + 'category_id=' + this.state.category_id + '&token=true';	
+        }else{	
+            var cate = (this.state.category_id == null) ? '?price_filter=' + a + '&token=true' : '?price_filter=' + a + '&' + 'category_id=' + this.state.category_id + '&token=true';	
+        }	
+        store.dispatch(getfilterProducts(cate));	
+        document.querySelector(".loader-wrapper").style = "display: block";	
     }
 
-    FilterByAZ = (a) => {
-        var cate = (this.state.category_id == null) ? '?sort_by_name=' + a + '&token=true' : '?sort_by_name=' + a + '&' + 'category_id=' + this.state.category_id + '&token=true';
-        store.dispatch(getfilterProducts(cate));
-        document.querySelector(".loader-wrapper").style = "display: block";
+    FilterByAZ = (a) => {	
+        this.setState({'sort':a,'is_sort':true})	
+        if(this.state.price_filter == true){	
+        var cate = (this.state.category_id == null) ? '?sort_by_name=' + a + '&price=' + this.state.min + ',' + this.state.max + '&token=true' : '?sort_by_name=' + a +'&price=' + this.state.min + ',' + this.state.max + '&' + 'category_id=' + this.state.category_id + '&token=true';	
+        }else{	
+            var cate = (this.state.category_id == null) ? '?sort_by_name=' + a + '&token=true' : '?sort_by_name=' + a + '&' + 'category_id=' + this.state.category_id + '&token=true';	
+        }	
+        store.dispatch(getfilterProducts(cate));	
+        document.querySelector(".loader-wrapper").style = "display: block";	
     }
 
 
-    handlePageChange(pageNumber) {
-      
-        var cate = '?page=' + pageNumber  + '&token=true';
+
+        handlePageChange(pageNumber) {	
+            console.log('price',this.state.price_filter)	
+            console.log('cate',this.state.is_category)	
+            console.log('catefgo',this.state.category_id)	
+             if(this.state.price_filter == true && this.state.is_category == true){	
+                var cate = '?price=' + this.state.min + ',' + this.state.max + '&category_id=' + this.state.category_id  + '&page=' + pageNumber  + '&token=true';	
+                }	
+                else if(this.state.price_filter == true){	
+                     var cate = '?price=' + this.state.min + ',' + this.state.max +  '&page=' + pageNumber  + '&token=true';	
+                 }	
+                
+            else if(this.state.is_category == true){	
+                var cate = '?category_id=' + this.state.category_id  + '&page=' + pageNumber  + '&token=true';	
+                }	
+        else{	
+            var cate = '?page=' + pageNumber  + '&token=true';	
+        }	
+    
+
+
+
+
         store.dispatch(getfilterProducts(cate));
         document.querySelector(".loader-wrapper").style = "display: block";
         this.setState({ activePage: pageNumber });
@@ -96,14 +137,17 @@ class ShopPage extends Component {
             });
         });
     }
-
+  
 
     render() {
+     
+
         function handleClick(e) {
             store.dispatch(removeWishlist(e));
         }
 
         function addItemTOCart(e) {
+            document.querySelector(".loader-wrapper").style = "display: block";
             var item = { 'product_id': e, 'quantity': 1 }
             store.dispatch(addItemToCart(item));
         }
@@ -132,7 +176,9 @@ class ShopPage extends Component {
 
 
         return (
+      
             <div>
+       
                 {/*SEO Support*/}
                 <Helmet>
                     <title>Makki Herbals | Shop Page</title>
@@ -145,6 +191,7 @@ class ShopPage extends Component {
                 <br />
                 <br />
                 <div class="row">
+               
                     <div className="col-lg-3">
                         <StickyBox offsetTop={20} offsetBottom={20}>
                             <div>
@@ -345,7 +392,17 @@ class ShopPage extends Component {
                                                             this.state.loadingNew ?
                                                                 <div class="skeleton-item skeleton-copy-full"></div>
                                                                 :
-                                                                <h6 style={{ fontSize: '12px', letterSpacing: '0px', fontFamily: "Poppins" }}>{(data.Category[0]) ? data.Category[0].name : ''}</h6>
+                                                                <h6 style={{ fontSize: '12px', letterSpacing: '0px', fontFamily: "Poppins" }}>
+                                                                        {(data.Category)?
+                                                        data.Category.map(cat =>(
+                                                            `${cat.name}  , `
+                                                        ))
+                                                        :
+                                                        ''
+                                                    } 
+                                                                    {/* {(data.Category[0]) ? data.Category[0].name : ''} */}
+                                                                    
+                                                                    </h6>
                                                         }
                                                         {
                                                             this.state.loadingNew ?
@@ -430,7 +487,16 @@ class ShopPage extends Component {
                                                             this.state.loadingNew ?
                                                                 <div class="skeleton-item skeleton-copy-full"></div>
                                                                 :
-                                                                <h6 style={{ fontSize: '12px', letterSpacing: '0px', fontFamily: "Poppins" }}>{(filtersproduct.data.Category[0]) ? filtersproduct.data.Category[0].name : ''}</h6>
+                                                                <h6 style={{ fontSize: '12px', letterSpacing: '0px', fontFamily: "Poppins" }}>
+                                                                   {(filtersproduct.data.Category)?
+                                                        filtersproduct.data.Category.map(cat =>(
+                                                            `${cat.name}  , `
+                                                        ))
+                                                        :
+                                                        ''
+                                                    } 
+                                                                    {/* {(filtersproduct.data.Category[0]) ? filtersproduct.data.Category[0].name : ''} */}
+                                                                    </h6>
                                                         }
                                                         {
                                                             this.state.loadingNew ?
@@ -490,6 +556,7 @@ class ShopPage extends Component {
                     </div>
                     : ''}
             </div>
+           
         )
     }
 }

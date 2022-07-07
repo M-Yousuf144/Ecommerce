@@ -101,6 +101,7 @@
     "react-router-scroll-4": "^1.0.0-beta.2",
     "react-router-transition": "^2.0.0",
     "react-scripts": "^2.1.8",
+    "react-scroll-to-top": "^1.0.8",
     "react-share": "^4.4.0",
     "react-simple-chatbot": "^0.6.1",
     "react-slick": "^0.21.0",

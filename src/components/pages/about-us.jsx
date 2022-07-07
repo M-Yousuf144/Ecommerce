@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Parser from 'html-react-parser';
+import { height } from '@mui/system';
 
 class aboutUs extends Component {
     constructor(props){
@@ -9,21 +10,23 @@ class aboutUs extends Component {
     }
     render() {
 
-        const {GetData} = this.props;
-        var result = (GetData)?GetData.filter(data => data.url_slug == 'about_us'):[];
+        const {GetData,user} = this.props;
+        var result = (GetData)?GetData.filter(data => data.url_slug == 'about_us_web'):[];
+        var about = (user.sliderBannner)? user.sliderBannner.filter(data => data.title == 'About Us'):[];
+        var about_side = (user.sliderBannner)? user.sliderBannner.filter(data => data.title == 'About Side Img'):[];
  
   
 
         return (
-            <div style={{paddingTop:'3%'}}>
-              {console.log(GetData)}
-                <section class="about-page  section-b-space">
-                    <div class="container">
-                       
-                      {/* <b> <h2 style={{textAlign:'center'}}>About Us</h2></b>  */}
-                      <div className="row">
-                        <div className="col-lg-lg-3"></div>
-                        <div className="col-lg-lg-6">
+            <div style={{paddingTop:'2%'}} className="about-top">
+            {about.map(res=>(
+            <div>
+            <img src={res.image_url} width="100%" height="100%"/>
+            </div>
+
+            ))}
+    <div className="row">
+        <div className="col-lg-6 base_bg_ligh" style={{width:'100%' ,height:"100%",padding:'8%',paddingTop:'5%'}}>
                         {
                             result.map(res=>(
                           
@@ -35,13 +38,18 @@ class aboutUs extends Component {
                             ))
 
                         }
-                        </div>
-                        <div className="col-lg-lg-3"></div>
-
-                      </div>
                       
-                    </div>
-                </section>
+        </div>
+        <div className="col-lg-6">
+        {about_side.map(res=>(
+            <div>
+            <img src={res.image_url} width="100%" height="100%" style={{paddingTop:'18%'}}/>
+            </div>
+
+            ))}
+        </div>
+    </div>
+
 
 
             </div>
@@ -49,7 +57,9 @@ class aboutUs extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    GetData: (state.pages.all_pages.data)?state.pages.all_pages.data:[]
+    GetData: (state.pages.all_pages.data)?state.pages.all_pages.data:[],
+    user: state.images,
+
 })
 
 

@@ -16,6 +16,7 @@ class BillingOptions extends Component {
             shippingM : "",
             paymentM : "",
             coupan:'',
+            disable_btn:0,
         }
     }
 
@@ -23,6 +24,8 @@ class BillingOptions extends Component {
         store.dispatch(removeCoupan());
     }
     saveOrder = () => {
+    document.querySelector(".loader-wrapper").style = "display: block";
+        this.setState({disable_btn:1})
         store.dispatch(saveOrder());
     }
     applyCoupan = (e) => {
@@ -165,7 +168,7 @@ class BillingOptions extends Component {
 
 
 
-<button class="btn btn-success w-100 py-3 my-3" style={{background:"#13743F"}}  onClick={(e) => this.saveOrder()}  type="submit">Confirm Order</button>
+<button class="btn btn-success w-100 py-3 my-3" style={{background:"#13743F"}} disabled={(this.state.disable_btn == 1)?true:false}  onClick={(e) => this.saveOrder()}  type="submit">Confirm Order</button>
 
 
 </div>

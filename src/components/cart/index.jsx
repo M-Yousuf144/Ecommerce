@@ -130,7 +130,7 @@ class cartComponent extends Component {
                                 </h2></td>
                                 <td>
                                     
-                                    <MdDeleteOutline onClick={() => removeitem(item.id)} style={{cursor:'pointer'}}/>
+                                    <MdDeleteOutline onClick={() => removeitem(item.id)} style={{cursor:'pointer', fontSize:'30px'}}/>
                                 </td>
                             </tr>
                         </tbody> )

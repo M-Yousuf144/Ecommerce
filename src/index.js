@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import { ScrollContext } from 'react-router-scroll-4';
 import { IntlReducer as Intl, IntlProvider } from 'react-redux-multilingual'
 import './index.scss';
@@ -95,11 +95,12 @@ import CustomizedTooltips from './components/pages/cart';
 import CartSidebars from './components/pages/Sidebarcart';
 import HorizontalNonLinearStepper from './components/pages/bredcram';
 import Guest_Address from './components/pages/guest-address';
-import Notification from '../src/Notification'
-
-
+import Notification from '../src/Notification';
+// import ScrollToTop from './components/pages/scroll_to_top';
 
 class Root extends React.Component {  
+
+    
     constructor(props) {
         super(props);
 
@@ -110,10 +111,12 @@ class Root extends React.Component {
     componentDidMount() {
 
         store.dispatch(fetchOrigin());
+    
     }
     componentWillMount(){
        
     }
+ 
     render() {
         store.dispatch(fetchBestSeller());
        
@@ -150,9 +153,13 @@ class Root extends React.Component {
             
         	<Provider store={store}>
                 <IntlProvider translations={translations} locale='en'>
-				<BrowserRouter basename={'/'} >
+				
+        
+                <BrowserRouter basename={'/'} >
+                        
 					<ScrollContext>
 						<Switch>
+                     
                             <Route exact path={`${process.env.PUBLIC_URL}/`} component={Coolncool} /> 
                         
                             <Layout>
@@ -181,7 +188,7 @@ class Root extends React.Component {
 								<PrivateRoute path={`${process.env.PUBLIC_URL}/myOrders`} component={MyOrders}/>
 							
                                 <PrivateRoute path={`${process.env.PUBLIC_URL}/viewDetails`} component={ViewDetails}/>
-                                <Route path={`${process.env.PUBLIC_URL}/shopPage`} component={shopPage}/>
+                                <Route path={`${process.env.PUBLIC_URL}/shopPage`}  component={shopPage}/>
                                 <Route path={`${process.env.PUBLIC_URL}/NewForgetPassword`} component={NewForgetPassword}/>
                                 <Route path={`${process.env.PUBLIC_URL}/cartitem`} component={CustomizedTooltips}/>
 
@@ -216,34 +223,13 @@ class Root extends React.Component {
                                 <PrivateRoute path={`${process.env.PUBLIC_URL}/profileDetails`} component={ProfileDetails}/>
                                 <Route path={`${process.env.PUBLIC_URL}/forgetPassword`} component={ForgetPassword}/>
 
-
-								{/*Features*/}
-                             
-								{/*Theme Elements*/}
-                         
-
-								{/*Product Elements*/}
-                           
-
-								{/*Portfolios*/}
-                             
-
-								{/*Blog Pages*/}
-                                
-                               
-                                
-
-                                {/* <Route exact path="*" component={PageNotFound} /> */}
-
-
-                                {/* <Route exact path={"**"} component={PageNF}/> */}
-
-
-
                             </Layout>
+                      
                          </Switch>
 					  </ScrollContext>
+               
 					</BrowserRouter>
+                
                 </IntlProvider>
 			</Provider>
     	);

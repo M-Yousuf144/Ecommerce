@@ -9,7 +9,7 @@ import { Badge } from '@mui/material';
 import store from '../../../store';
 import { searchProduct, getLogout, userLogoff } from '../../../actions'
 import { connect } from "react-redux";
-
+// import ScrollToTop from '../../pages/scroll_to_top'
 import TemporaryDrawer from '../../pages/cart';
 
 
@@ -62,13 +62,8 @@ useEffect(()=>{
 		<>
 		
 			<header class="header" style={{ position: "fixed",}}>
-
-
-
-
-
-
 				<nav class="navbar navbar-expand-lg ">
+			
 					<div class="container-fluid">
 						<div class="logo">
 							<Link to={`${process.env.PUBLIC_URL}/`}>
@@ -88,7 +83,7 @@ useEffect(()=>{
 									</li>
 								</Link>
 								<li className='mx-3 py-2'>
-												<Link to={`${process.env.PUBLIC_URL}/about-us`}>About</Link>
+												<Link to={`${process.env.PUBLIC_URL}/about-us`}>ABOUT</Link>
 								</li>
 								<li className='mx-3 py-2'>
 									<Link to={`${process.env.PUBLIC_URL}/shopPage`}><a>SHOP <i class=""></i></a></Link>

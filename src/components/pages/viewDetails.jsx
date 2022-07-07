@@ -78,7 +78,7 @@ returnsubmit = (e) =>{
                        <tbody>
                         {(getorders)?
                         <>
-                        {console.log(getorders)}
+                 
                         {(getorders.items)?getorders.items.map(item_data =>(
                             <tr>
                             <td>

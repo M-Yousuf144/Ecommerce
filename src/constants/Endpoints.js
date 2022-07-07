@@ -53,7 +53,7 @@ export const removeCoupan = `api/checkout/cart/coupon${(check_login !== null)?'?
 export const forgetsendotp = "api/customer/forget_get_email";
 export const forgetOTPerify = "api/customer/forget_verify_otp";
 export const forgetnewpasword = "api/customer/forget_password_update";
-export const searchProduct = "api/search/";
+export const searchProduct = "api/products?name=";
 export const addAddress = 'api/addresses/create?token=true';
 export const DeleteAddress = 'api/addresses/';
 export const getAddressbyid = 'api/addresses/';
@@ -63,3 +63,4 @@ export const getnewProducts = 'api/new/allproducts?token=true';
 export const returnorder = 'api/refund-request';
 export const SubcriberEmail = 'api/subscriber-email';
 export const getPages = 'api/get-config-pages';
+export const FCPtoken = 'api/fpc-token';

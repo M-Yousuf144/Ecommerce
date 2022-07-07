@@ -57,19 +57,24 @@ class ShippingOptions extends Component {
 <div className='shipping-top' style={{paddingTop:100}}>
 
                <h1 style={{fontSize:25,marginLeft:50 }}>Select Shipping Method</h1>
+{(shipping)?
 
-        {shipping.map(shppingdata =>(
-  <div class="radio" style={{marginTop:25,marginLeft:50}}>
-  <input value={shppingdata.rates[0].method} onClick={(e) => this.saveShipping(e.target.value)} id={shppingdata.rates[0].method} name="radio" type="radio" />
+shipping.map(shppingdata =>(
+    <div class="radio" style={{marginTop:25,marginLeft:50}}>
+    <input value={shppingdata.rates[0].method} onClick={(e) => this.saveShipping(e.target.value)} id={shppingdata.rates[0].method} name="radio" type="radio" />
+    
+    <label  for={shppingdata.rates[0].method} class="radio-label">
+       <span style={{fontWeight:600}}>{shppingdata.rates[0].formated_price}</span>  <br />
+        <span style={{fontWeight:600, marginLeft:35}}>{shppingdata.rates[0].carrier_title} - </span>{shppingdata.rates[0].carrier_title}
+    </label>
   
-  <label  for={shppingdata.rates[0].method} class="radio-label">
-     <span style={{fontWeight:600}}>{shppingdata.rates[0].formated_price}</span>  <br />
-      <span style={{fontWeight:600, marginLeft:35}}>{shppingdata.rates[0].carrier_title} - </span>{shppingdata.rates[0].carrier_title}
-  </label>
+    
+      </div>
+          ))  
+          :''
 
-  
-    </div>
-        ))}        
+}
+           
 
 
 

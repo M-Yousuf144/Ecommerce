@@ -43,7 +43,7 @@ class Contact extends Component {
                 "phone_number":this.state.phone_number,
                 "email":this.state.email    
             };
-           
+            document.querySelector(".loader-wrapper").style = "display: block";
             store.dispatch(SendContact(data));
         }
         else {
@@ -144,7 +144,7 @@ class Contact extends Component {
                                         </div>
                                         <div class="col-md-6">
                                             <label htmlFor="email">Email</label>
-                                            <input type="text" class="form-control" id="email" name="email"   placeholder="Email"
+                                            <input type="email" class="form-control" id="email" name="email"   placeholder="Email"
                                                    required="" onChange={this.setStateFromInput}/>
                                                      {this.validator.message('email', this.state.email, 'required|email')}
                                         </div>

@@ -19,6 +19,7 @@ class Collection2 extends Component {
             store.dispatch(removeWishlist(e));
         }
         function addItemTOCart(e) {
+        document.querySelector(".loader-wrapper").style = "display: block";
             var item = {'product_id':e,'quantity':1}
             store.dispatch(addItemToCart(item));
         }

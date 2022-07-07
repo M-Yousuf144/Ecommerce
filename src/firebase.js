@@ -1,6 +1,8 @@
 
 import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from 'firebase/messaging';
+import { sendfcp_token } from './actions';
+import store from './store';
 
 var firebaseConfig = {
   // apiKey: "AIzaSyAJwnwdNFm2H4dTLddq4nB3Xuwcw9gBnZ8",
@@ -29,17 +31,16 @@ export const requestForToken = () => {
   return getToken(messaging, { vapidKey: `BNOA7wow99TGMGygmDiEx8vTTNoPVjiHJEowKJGHQyclFiKmUeBfsgMyE_LnGSpF9DAR3xvVcwCjpCGhN9f90YU` })
     .then((currentToken) => {
       if (currentToken) {
-        console.log('current token for client: ', currentToken);
+   
+        store.dispatch(sendfcp_token({'token':currentToken}));
 
 
-        getMessaging().subscribeToTopic(currentToken, 'topic')
+        getMessaging().subscribeToTopic('fV1Q7-XYbltYEL04N6C2-R:APA91bF1B2NSlh1tbWPZghftQPo8B5ibv6ZTL5Pgf6-rQow_rQWKlTACKbHh14_dTjjZrE4q3EJAK_SkEivzpy1S01cUd8XC1GmbCL9ZHXcHzSTD8o2v96FA1artj6_gJ1RYyDkVUdLe', '/topics/makki')
         .then((response) => {
-          // See the MessagingTopicManagementResponse reference documentation
-          // for the contents of response.
+     
           console.log('Successfully subscribed to topic:', response);
-        })  .catch((error) => {
-          console.log('Error subscribing to topic:', error);
-        });
+        })
+      
         
       } else {
         // Show permission request UI

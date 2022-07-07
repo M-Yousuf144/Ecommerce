@@ -59,6 +59,7 @@ if(name !== item.api.name){
 
 
 function addItemTOCart(e) {
+  document.querySelector(".loader-wrapper").style = "display: block";
   var item = {'product_id':e,'quantity':qty}
   store.dispatch(addItemToCart(item));
   setqty(1);
@@ -242,10 +243,15 @@ useEffect(()=>{
 {(item.api.super_attributes)?<div><h5 className='h5ian'>Size</h5>
 
 <select id="cars" onChange={(e)=>getvariant(e.target.value)} style={{ width: "100%", padding: 10, border: "1px solid rgba(0,0,0,0.2)", borderRadius: 5, outline: "none" }}>
-{item.api.super_attributes[1].options.map(e =>(
+{/* {item.api.super_attributes[1].options.map(e =>(
   <option value={e.id}>{e.label}</option>
-))}
+))} */}
 
+{item.api.super_attributes.map(e =>(
+  e.options.map(a =>(
+    <option value={a.id}>{a.label}</option>
+  ))
+))}
 </select></div>:<div></div>}
               
 

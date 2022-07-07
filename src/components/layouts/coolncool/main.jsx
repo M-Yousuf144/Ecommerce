@@ -16,6 +16,8 @@ import { getfilterProducts,sendSubscriberEmail } from '../../../actions';
 import store from '../../../store';
 import Slider from 'react-slick';
 import Cookies from 'js-cookie';
+import Notification from '../../../Notification';
+import { useLocation } from "react-router";
 class Coolncool extends Component {
     constructor (props) {
         super (props);
@@ -24,7 +26,9 @@ class Coolncool extends Component {
            loadingCategory:true,
            subscribeModal:true,
            checkstatus:Cookies.get('SubscribeModal'),
-           subscriberEmail:''
+           subscriberEmail:'',
+           notification_token:true,
+           check_notificaton:Cookies.get('Notification_token')
            };
     }
 
@@ -82,7 +86,9 @@ class Coolncool extends Component {
             Cookies.set('SubscribeModal',true, { expires: 1 })
             this.setState({subscribeModal:false})
         }
-    
+
+      
+
         let sendEmail = () =>{
             let obj ={
                 'email':this.state.subscriberEmail
@@ -92,10 +98,21 @@ class Coolncool extends Component {
         }
         var top = (user.sliderBannner)? user.sliderBannner.filter(data => data.title == 'Banner Top'):[];
         var bottom = (user.sliderBannner)? user.sliderBannner.filter(data => data.title == 'Banner Bottom'):[];
-     
+
         return (
             <div>
-                
+       
+
+                {
+                    (this.state.notification_token == true && this.state.check_notificaton != 'true')?
+                    <>
+                    {<Notification />}
+                    {this.setState({notification_token:false}) }
+                    {Cookies.set('Notification_token',true, { expires: 10 }) }
+                    </>
+                    
+                    :''
+                }
                 <Helmet>
                     <title>Home - Makki Herbals</title>
                 </Helmet>
@@ -202,7 +219,7 @@ this.state.loadingCategory ?
         <br />
         <div id="input-subscribe">
             <input style={{paddingLeft:"15px"}} className="input-class" type="email" name="email" onChange={(e)=>this.setState({subscriberEmail:e.target.value})} placeholder="Enter your email"/>
-            <button id="subscribe" onClick={()=>sendEmail()}>Subscribe</button>
+            <button id="subscribe"  onClick={()=>sendEmail()}>Subscribe</button>
         </div>
     </div>
 </div>

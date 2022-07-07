@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import store from '../../store';
 class AddressCard extends Component {
   saveaddress = (e, a) => {
+    console.log(a,' ',e)
     var CryptoJS = require("crypto-js");
     const decryptedData = localStorage.getItem("customerData");
     var bytes = CryptoJS.AES.decrypt(decryptedData, url.encrypt_code);
@@ -85,7 +86,7 @@ class AddressCard extends Component {
           </div>
         </div>
         <div style={{ paddingTop: "10px" }} >
-          {console.log(Address)}
+
           <Slider {...settings} class="slide-4">
             {(Address.length !== 0) ?
               Address.map((e, i) => {
@@ -130,7 +131,7 @@ class AddressCard extends Component {
                           <br />
                         </div>
                         <div className="radio">
-                          <input name="address" id="radio-2" style={{ marginLeft: 10 }} onClick={(f) => this.saveaddress(e.id, e.address1)} type="radio" />
+                          <input name="address" id="radio-2" style={{ marginLeft: 10 }}   onClick={(f) => this.saveaddress(e.id, e.address1)} type="radio" />
                           <label for="radio-2" class="radio-label my-2">Select</label>
                         </div>
                         {/* <label htmlFor='address'>Select</label>            */}

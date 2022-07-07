@@ -124,11 +124,20 @@ class ProductItem extends Component {
                                     </a>
                                     <h3 class="product-title">
                                         <a class="product-link title" href="#">
+                                   
+
                                             {
                                                 this.state.loadingNew ?
                                                     <div class="skeleton-item skeleton-copy-full"></div>
                                                     :
-                                                    <h6 style={{ fontSize: '12px', letterSpacing: '0px', fontFamily: "Poppins" }}>{product.category}</h6>
+                                                    <h6 style={{ fontSize: '12px', letterSpacing: '0px', fontFamily: "Poppins" }}>{(product.category)?
+                                                        product.category.map(cat =>(
+                                                            `${cat.name}  , `
+
+                                                        ))
+                                                        :
+                                                        ''
+                                                    }</h6>
                                             }
                                             {
                                                 this.state.loadingNew ?

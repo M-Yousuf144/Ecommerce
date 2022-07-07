@@ -34,7 +34,8 @@ import { toast } from 'react-toastify';
              obj.stock = 1000;
              obj.new = true;
              obj.isfeatured = true;
-             obj.category = (d.Category[0])?d.Category[0].name:'None';
+             obj.category = (d.Category)?d.Category:[];
+
              obj.country = 'UAE';
              obj.rating = 5;
              obj.api= d;
@@ -195,7 +196,7 @@ import { toast } from 'react-toastify';
            obj.stock = 1000;
            obj.new = true;
            obj.isfeatured = d.IsFeatured;
-           // obj.category = d.Category[0].name;
+           obj.category = (d.Category)?d.Category:[];
            obj.country = 'UAE';
            obj.rating = 5;
            obj.api= d;
@@ -311,7 +312,12 @@ import { toast } from 'react-toastify';
       cb(d.data);
     });
   },
+  sendfcp_token:(payload,cb,timeout) =>{
 
+    postData(url.temp_url+url.FCPtoken,payload).then( async d =>{
+      cb(d.data);
+    });
+  },
   sendSubscriberEmail:(payload,cb,timeout) =>{
     postData(url.temp_url+url.SubcriberEmail,payload).then( async d =>{
       cb(d.data);
@@ -360,7 +366,7 @@ import { toast } from 'react-toastify';
   let token = (check_login !== null)?'?token=true':'';
   postData(url.temp_url+url.addcartitem+payload.product_id+token,payload)
   .then(res => {
-console.log('add cart',res)
+
     cb(res.data);
   });
   

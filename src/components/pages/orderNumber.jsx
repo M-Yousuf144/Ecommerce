@@ -4,7 +4,7 @@ import { Button, Card } from 'react-bootstrap'
 // import {Logos} from '../../assets/images/logos.png'
 const OrderNumber = () => {
   const OrderDetail =JSON.parse( localStorage.getItem("Order-number"));
-  console.log(OrderDetail)
+
   return (
 <center><div style={{width:'auto',padding:'15px'}}>
 <br/><br/><br/><br/><br/>

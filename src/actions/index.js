@@ -516,6 +516,7 @@ export const SendContact = (data) =>(dispatch) =>{
         progress: undefined,
         bodyClassName: 'toastStyle',
     });
+    document.querySelector(".loader-wrapper").style = "display: none";
      setTimeout(function(){
         window.location.reload(true);
          }, 2000);
@@ -673,6 +674,11 @@ export const forgetNewPassword = (data) =>(dispatch) =>{
         });
      });
 }
+export const sendfcp_token = (data) =>(dispatch) =>{
+    shop.sendfcp_token(data,e=>{ 
+     });
+}
+
 export const forgetverifyotp= (data) =>(dispatch) =>{
     shop.forgetverifyotp(data,e=>{
         if(e.status === 200){
@@ -704,6 +710,8 @@ export const addItemToCart = (data) =>(dispatch) =>{
             progress: undefined,
             bodyClassName: 'toastStyle',
         });
+        document.querySelector(".loader-wrapper").style = "display: none";
+
         shop.getCartData(e=>{
             dispatch(dispatchgetCart(e));
             });

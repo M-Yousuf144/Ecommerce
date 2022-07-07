@@ -31,13 +31,7 @@ class App extends Component {
     }
 
     render() {
-    //    getToken(this.state.isTokenFound);
 
-    //    onMessageListener().then(payload => {
-    //     this.setState({show:true});
-    //     this.setState({notification:{title: payload.notification.title, body: payload.notification.body}})
-    //     console.log(payload);
-    //   }).catch(err => console.log('failed: ', err));
         return (
             
             <div>
