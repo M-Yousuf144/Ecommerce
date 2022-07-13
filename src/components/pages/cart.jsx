@@ -19,8 +19,9 @@ import { MdOutlineShoppingBag } from "react-icons/md";
   });
 
 const {cartData} = props
-let item_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items_qty.length : 0;
-let final_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items_qty.substring(0, item_lenght - 5) : 0;
+
+let item_lenght = (cartData)? (cartData.items_qty) ? cartData.items_qty.length : 0 :0;
+let final_lenght = (cartData)? (cartData.items_qty ) ? cartData.items_qty.substring(0, item_lenght - 5) : 0 :0;
 
 
   const toggleDrawer = (anchor, open) => (event) => {

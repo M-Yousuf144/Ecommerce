@@ -40,8 +40,8 @@ const Header2 = ({ wishList, cart, compare, getWishlist, cartData, user }) => {
 	
 
 
-	let item_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items_qty.length : 0;
-	let final_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items_qty.substring(0, item_lenght - 5) : 0;
+	// let item_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items_qty.length : 0;
+	// let final_lenght = (cartData != null && cartData.length !== 0 ) ? cartData.items_qty.substring(0, item_lenght - 5) : 0;
 
 useEffect(()=>{
 	if(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
@@ -120,10 +120,11 @@ useEffect(()=>{
 								showSearch ?
 							<div class={drop ? "d-flex header-item ab" : "d-flex header-item ab anashere"} >
 								<input class="form-control me-2" style={{ borderRadius: 10 }} type="search" placeholder="Search" aria-label="Search" onChange={(e) => setsearch(e.target.value)} />
-								<button class="btn" disabled={search ? false : true} style={{ borderRadius: 10, backgroundColor:"#13743F", textAlign:"center" }} type="submit" onClick={() => searching()}>	
-									<Link to={`${process.env.PUBLIC_URL}/shopPage`} style={{ color: "inherit", textDecoration: "none" }}> 
+									<Link to={`${process.env.PUBLIC_URL}/shopPage`} onClick={() => searching()} style={{ color: "inherit", textDecoration: "none" }}> 
+								<button class="btn" disabled={search ? false : true} style={{ borderRadius: 10, backgroundColor:"#13743F", textAlign:"center" }} type="submit" >	
 									 <FiSearch style={{ fontSize: 24,margin:4,color:"#fff" }} /> 
-									 </Link></button>
+									 </button>
+									 </Link>
 							</div>
 : null
 							}

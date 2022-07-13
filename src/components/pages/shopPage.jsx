@@ -36,7 +36,8 @@ class ShopPage extends Component {
             'price_filter':false,	
             'is_category':false,	
             'sort':null,	
-            'is_sort':false
+            'is_sort_by_price':false,
+            'is_sort_by_alpha':false
             
         }
        
@@ -78,7 +79,7 @@ class ShopPage extends Component {
     
 
     FilterByPrice = (a) => {	
-        this.setState({'sort':a,'is_sort':true})	
+        this.setState({'sort':a,'is_sort_by_price':true})
         if(this.state.price_filter == true){	
         var cate = (this.state.category_id == null) ? '?sort_by_name=' + a + '&price=' + this.state.min + ',' + this.state.max + '&token=true' : '?sort_by_name=' + a +'&price=' + this.state.min + ',' + this.state.max + '&' + 'category_id=' + this.state.category_id + '&token=true';	
         }else{	
@@ -89,7 +90,7 @@ class ShopPage extends Component {
     }
 
     FilterByAZ = (a) => {	
-        this.setState({'sort':a,'is_sort':true})	
+        this.setState({'sort':a,'is_sort_by_alpha':true})
         if(this.state.price_filter == true){	
         var cate = (this.state.category_id == null) ? '?sort_by_name=' + a + '&price=' + this.state.min + ',' + this.state.max + '&token=true' : '?sort_by_name=' + a +'&price=' + this.state.min + ',' + this.state.max + '&' + 'category_id=' + this.state.category_id + '&token=true';	
         }else{	
@@ -102,16 +103,19 @@ class ShopPage extends Component {
 
 
         handlePageChange(pageNumber) {	
-            console.log('price',this.state.price_filter)	
-            console.log('cate',this.state.is_category)	
-            console.log('catefgo',this.state.category_id)	
+         	
              if(this.state.price_filter == true && this.state.is_category == true){	
                 var cate = '?price=' + this.state.min + ',' + this.state.max + '&category_id=' + this.state.category_id  + '&page=' + pageNumber  + '&token=true';	
                 }	
                 else if(this.state.price_filter == true){	
                      var cate = '?price=' + this.state.min + ',' + this.state.max +  '&page=' + pageNumber  + '&token=true';	
                  }	
-                
+                 else if (this.state.is_sort_by_alpha ==true){
+                    var cate = '?sort_by_name=' + this.state.sort +  '&page=' + pageNumber  + '&token=true';
+                }
+                else if (this.state.is_sort_by_price ==true){
+                    var cate = '?price_filter=' + this.state.sort +  '&page=' + pageNumber  + '&token=true';
+                }
             else if(this.state.is_category == true){	
                 var cate = '?category_id=' + this.state.category_id  + '&page=' + pageNumber  + '&token=true';	
                 }	
